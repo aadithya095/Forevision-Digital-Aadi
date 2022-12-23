@@ -3,3 +3,4 @@ db.sqlite3
 src/dashboard/__pycache__/*
 src/dashboard/migrations/__pycache__/*
 src/src/__pycache__/*
+src/*/__pycache__/*

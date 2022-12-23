@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ernm:NewReleaseMessage xmlns:ernm="http://ddex.net/xml/ern/43" LanguageAndScriptCode="en"
+	ReleaseProfileVersionId="Audio" ReleaseProfileVariantVersionId="Classical"
+	xmlns:avs="http://ddex.net/xml/avs/avs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ddex.net/xml/ern/43 http://ddex.net/xml/ern/43/release-notification.xsd" AvsVersionId="3">
+	<MessageHeader>
+		<MessageThreadId>1</MessageThreadId>
+		<MessageId>1</MessageId>
+		<MessageSender>
+			<PartyId>PADPIDA67890</PartyId>
+			<PartyName>
+				<FullName>TestLabel</FullName>
+			</PartyName>
+		</MessageSender>
+		<MessageRecipient>
+			<PartyId>PADPIDA12345</PartyId>
+			<PartyName>
+				<FullName>Testpartner</FullName>
+			</PartyName>
+		</MessageRecipient>
+		<MessageCreatedDateTime>2022-04-22T01:06:36.729Z</MessageCreatedDateTime>
+		<MessageControlType>TestMessage</MessageControlType>
+	</MessageHeader>
+	<PartyList>
+		<Party>
+			<PartyReference>P1</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>Filarmonica della Scala</FullName>
+				<KeyName>Filarmonica della Scala</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-hrkt">
+				<FullName>スカラザフィルハーモニーカンゲンガクダン</FullName>
+				<KeyName>スカラザフィルハーモニーカンゲンガクダン</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-jpan">
+				<FullName>スカラ座フィルハーモニー管弦楽団</FullName>
+				<KeyName>スカラ座フィルハーモニー管弦楽団</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P2</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>Riccardo Chailly</FullName>
+				<NamesBeforeKeyName>Riccardo</NamesBeforeKeyName>
+				<KeyName>Chailly</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-hrkt">
+				<FullName>リッカルドシャイー</FullName>
+				<KeyName>リッカルドシャイー</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-jpan">
+				<FullName>リッカルド・シャイー</FullName>
+				<KeyName>リッカルド・シャイー</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P3</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>Dominic Fyfe</FullName>
+				<NamesBeforeKeyName>Dominic</NamesBeforeKeyName>
+				<KeyName>Fyfe</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-jpan">
+				<FullName>Dominic Fyfe</FullName>
+				<KeyName>Dominic Fyfe</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P4</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>John Fraser</FullName>
+				<NamesBeforeKeyName>John</NamesBeforeKeyName>
+				<KeyName>Fraser</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-hrkt">
+				<FullName>ＪｏｈｎＦｒａｓｅｒ</FullName>
+				<KeyName>ＪｏｈｎＦｒａｓｅｒ</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-jpan">
+				<FullName>John Fraser</FullName>
+				<KeyName>John Fraser</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P5</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>Philip Siney</FullName>
+				<NamesBeforeKeyName>Philip</NamesBeforeKeyName>
+				<KeyName>Siney</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-hrkt">
+				<FullName>サイニー</FullName>
+				<KeyName>サイニー</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-jpan">
+				<FullName>フィリップ・サイニー</FullName>
+				<KeyName>フィリップ・サイニー</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P6</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>Ian Watson</FullName>
+				<NamesBeforeKeyName>Ian</NamesBeforeKeyName>
+				<KeyName>Watson</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-hrkt">
+				<FullName>イアンワトソン</FullName>
+				<KeyName>イアンワトソン</KeyName>
+			</PartyName>
+			<PartyName LanguageAndScriptCode="ja-jpan">
+				<FullName>イアン・ワトソン</FullName>
+				<KeyName>イアン・ワトソン</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P7</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>Wolfgang Amadeus Mozart</FullName>
+				<NamesBeforeKeyName>Wolfgang Amadeus</NamesBeforeKeyName>
+				<KeyName>Mozart</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P8</PartyReference>
+			<PartyName LanguageAndScriptCode="en">
+				<FullName>Giovanni de Gamerra</FullName>
+				<NamesBeforeKeyName>Giovanni</NamesBeforeKeyName>
+				<KeyName>de Gamerra</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P9</PartyReference>
+			<PartyName>
+				<FullName>Riccardo Chailly</FullName>
+				<NamesBeforeKeyName>Riccardo</NamesBeforeKeyName>
+				<KeyName>Chailly</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P10</PartyReference>
+			<PartyName>
+				<FullName>Filarmonica della Scala</FullName>
+				<KeyName>Filarmonica della Scala</KeyName>
+			</PartyName>
+		</Party>
+		<Party>
+			<PartyReference>P11</PartyReference>
+			<PartyName>
+				<FullName>Decca Music Group Ltd.</FullName>
+			</PartyName>
+		</Party>
+	</PartyList>
+	<ResourceList>
+		<SoundRecording ApplyClassicalProfileVariant="true">
+			<ResourceReference>A1</ResourceReference>
+			<Type>MusicalWorkSoundRecording</Type>
+			<SoundRecordingEdition>
+				<ResourceId>
+					<ISRC>GBBBC2200191</ISRC>
+				</ResourceId>
+				<PLine IsDefault="true">
+					<Year>2022</Year>
+					<PLineCompany>Universal Music Operations Limited</PLineCompany>
+					<PLineText>℗ 2022 Universal Music Operations Limited</PLineText>
+				</PLine>
+				<TechnicalDetails>
+					<TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+					<DeliveryFile>
+						<Type>AudioFile</Type>
+						<AudioCodecType>MP3</AudioCodecType>
+						<BitRate UnitOfMeasure="kbps">320</BitRate>
+						<NumberOfChannels>2</NumberOfChannels>
+						<SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+						<Duration>PT0H7M48.924S</Duration>
+						<File>
+							<URI>00028948530434_T2_audtrk.mp3</URI>
+							<HashSum>
+								<Algorithm>MD5</Algorithm>
+								<HashSumValue>0e771a50ae6b803e91100b6ce461a9bc</HashSumValue>
+							</HashSum>
+						</File>
+					</DeliveryFile>
+					<IsClip>false</IsClip>
+					<ClipDetails>
+						<TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+						<ClipType>Preview</ClipType>
+						<Timing>
+							<StartPoint>48</StartPoint>
+							<DurationUsed>PT0H0M30.041S</DurationUsed>
+						</Timing>
+						<ExpressionType>Informative</ExpressionType>
+						<DeliveryFile>
+							<Type>AudioFile</Type>
+							<AudioCodecType>MP3</AudioCodecType>
+							<BitRate UnitOfMeasure="kbps">320</BitRate>
+							<NumberOfChannels>2</NumberOfChannels>
+							<SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>							
+							<File>
+								<URI>00028948530434_T3_audtrk.mp3</URI>
+								<HashSum>
+									<Algorithm>MD5</Algorithm>
+									<HashSumValue>64b722e08bdf2e155d1cde98ca598dbf</HashSumValue>
+								</HashSum>
+							</File>
+						</DeliveryFile>
+					</ClipDetails>					
+				</TechnicalDetails>
+			</SoundRecordingEdition>
+			<WorkId>
+				<ComposerCatalogNumber>K. 135</ComposerCatalogNumber>
+			</WorkId>			
+			<DisplayTitleText IsDefault="true" LanguageAndScriptCode="en">Mozart: Lucio Silla, K. 135 - Overture</DisplayTitleText>
+			<DisplayTitle IsDefault="true" LanguageAndScriptCode="en">
+				<TitleText>Mozart: Lucio Silla, K. 135 - Overture</TitleText>
+			</DisplayTitle>
+			<AdditionalTitle IsDefault="true" LanguageAndScriptCode="en" TitleType="FormalTitle">
+				<TitleText>Overture</TitleText>
+			</AdditionalTitle>
+			<AdditionalTitle IsDefault="true" LanguageAndScriptCode="en" TitleType="GroupingTitle">
+				<TitleText>Lucio Silla, K. 135</TitleText>
+			</AdditionalTitle>
+			<DisplayArtistName IsDefault="true">Filarmonica della Scala and Riccardo Chailly</DisplayArtistName>
+			<DisplayArtist SequenceNumber="1">
+				<ArtistPartyReference>P1</ArtistPartyReference>
+				<DisplayArtistRole>MainArtist</DisplayArtistRole>
+				<ArtisticRole>Orchestra</ArtisticRole>
+			</DisplayArtist>
+			<DisplayArtist SequenceNumber="2">
+				<ArtistPartyReference>P2</ArtistPartyReference>
+				<DisplayArtistRole>MainArtist</DisplayArtistRole>
+				<ArtisticRole>Conductor</ArtisticRole>
+			</DisplayArtist>
+			<Contributor SequenceNumber="1">
+				<ContributorPartyReference>P1</ContributorPartyReference>
+				<Role>Orchestra</Role>
+			</Contributor>
+			<Contributor SequenceNumber="2">
+				<ContributorPartyReference>P2</ContributorPartyReference>
+				<Role>Conductor</Role>
+			</Contributor>
+			<Contributor SequenceNumber="3">
+				<ContributorPartyReference>P3</ContributorPartyReference>
+				<Role>StudioProducer</Role>
+				<Role>ExecutiveProducer</Role>
+			</Contributor>
+			<Contributor SequenceNumber="4">
+				<ContributorPartyReference>P4</ContributorPartyReference>
+				<Role Namespace="PADPIDA2013042401U" UserDefinedValue="Recording Producer">StudioProducer</Role>
+			</Contributor>
+			<Contributor SequenceNumber="5">
+				<ContributorPartyReference>P5</ContributorPartyReference>
+				<Role>RecordingEngineer</Role>
+			</Contributor>
+			<Contributor SequenceNumber="6">
+				<ContributorPartyReference>P6</ContributorPartyReference>
+				<Role>Editor</Role>
+			</Contributor>
+			<Contributor SequenceNumber="7">
+				<ContributorPartyReference>P7</ContributorPartyReference>
+				<Role>Composer</Role>
+			</Contributor>
+			<Contributor SequenceNumber="8">
+				<ContributorPartyReference>P8</ContributorPartyReference>
+				<Role>Author</Role>
+			</Contributor>
+			<CourtesyLine IsDefault="true">A Decca Classics Recording</CourtesyLine>
+			<Duration>PT7M49S</Duration>
+			<CreationDate ApplicableTerritoryCode="IT" LocationDescription="Teatro Alla Scala">2021-06-06</CreationDate>
+			<ParentalWarningType IsDefault="true">NotExplicit</ParentalWarningType>
+		</SoundRecording>
+		<Image>
+			<ResourceReference>A2</ResourceReference>
+			<Type>FrontCoverImage</Type>
+			<ResourceId>
+				<ProprietaryId Namespace="PADPIDA2013042401U">22UMGIM16162</ProprietaryId>
+			</ResourceId>
+			<DisplayTitleText IsDefault="true" LanguageAndScriptCode="en">Musa Italiana</DisplayTitleText>
+			<DisplayTitle IsDefault="true" LanguageAndScriptCode="en">
+				<TitleText>Musa Italiana</TitleText>
+			</DisplayTitle>
+			<AdditionalTitle IsDefault="true" LanguageAndScriptCode="en" TitleType="FormalTitle">
+				<TitleText>Musa Italiana</TitleText>
+			</AdditionalTitle>
+			<Contributor SequenceNumber="1">
+				<ContributorPartyReference>P9</ContributorPartyReference>
+				<Role>Conductor</Role>
+			</Contributor>
+			<Contributor SequenceNumber="2">
+				<ContributorPartyReference>P10</ContributorPartyReference>
+				<Role>Orchestra</Role>
+			</Contributor>
+			<CLine IsDefault="true">
+				<Year>2022</Year>
+				<CLineCompany>Universal Music Operations Limited</CLineCompany>
+				<CLineText>© 2022 Universal Music Operations Limited</CLineText>
+			</CLine>
+			<CourtesyLine IsDefault="true">Decca Classics</CourtesyLine>
+			<ParentalWarningType IsDefault="true">NotExplicit</ParentalWarningType>
+			<TechnicalDetails>
+				<TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+				<ImageCodecType>JPEG</ImageCodecType>
+				<ImageHeight UnitOfMeasure="Pixel">600</ImageHeight>
+				<ImageWidth UnitOfMeasure="Pixel">600</ImageWidth>
+				<File>
+					<URI>22UMGIM16162_T1_cvrart.jpg</URI>
+					<HashSum>
+						<Algorithm>MD5</Algorithm>
+						<HashSumValue>7a98e47ed2c3c42c6bc314feeb4466e8</HashSumValue>
+					</HashSum>
+				</File>
+			</TechnicalDetails>
+		</Image>
+	</ResourceList>
+	<ReleaseList>
+		<Release>
+			<ReleaseReference>R0</ReleaseReference>
+			<ReleaseType>ClassicalAlbum</ReleaseType>
+			<ReleaseId>
+				<ICPN>00028948530434</ICPN>
+			</ReleaseId>
+			<DisplayTitleText IsDefault="true" LanguageAndScriptCode="en">Mozart: Lucio Silla, K. 135: Overture</DisplayTitleText>
+			<DisplayTitle IsDefault="true" LanguageAndScriptCode="en">
+				<TitleText>Mozart: Lucio Silla, K. 135: Overture</TitleText>
+			</DisplayTitle>
+			<AdditionalTitle IsDefault="true" LanguageAndScriptCode="en" TitleType="FormalTitle">
+				<TitleText>Mozart: Lucio Silla, K. 135: Overture</TitleText>
+			</AdditionalTitle>
+			<DisplayArtistName IsDefault="true">Riccardo Chailly and Filarmonica della Scala</DisplayArtistName>
+			<DisplayArtist SequenceNumber="1">
+				<ArtistPartyReference>P2</ArtistPartyReference>
+				<DisplayArtistRole>MainArtist</DisplayArtistRole>
+				<ArtisticRole Namespace="PADPIDA2013042401U">Conductor</ArtisticRole>
+			</DisplayArtist>
+			<DisplayArtist SequenceNumber="2">
+				<ArtistPartyReference>P1</ArtistPartyReference>
+				<DisplayArtistRole>MainArtist</DisplayArtistRole>
+				<ArtisticRole Namespace="PADPIDA2013042401U">Orchestra</ArtisticRole>
+			</DisplayArtist>
+			<ReleaseLabelReference IsDefault="true">P11</ReleaseLabelReference>
+			<PLine IsDefault="true">
+				<Year>2022</Year>
+				<PLineCompany>Universal Music Operations Limited</PLineCompany>
+				<PLineText>℗ 2022 Universal Music Operations Limited</PLineText>
+			</PLine>
+			<CLine IsDefault="true">
+				<Year>2022</Year>
+				<CLineCompany>Universal Music Operations Limited</CLineCompany>
+				<CLineText>© 2022 Universal Music Operations Limited</CLineText>
+			</CLine>
+			<CourtesyLine IsDefault="true">A Decca Classics Release</CourtesyLine>
+			<Duration>PT7M49S</Duration>
+			<Genre IsDefault="true">
+				<GenreText>Classical</GenreText>
+			</Genre>
+			<ReleaseDate IsDefault="true">2022-04-22</ReleaseDate>
+			<OriginalReleaseDate IsDefault="true">2022-04-22</OriginalReleaseDate>
+			<ParentalWarningType IsDefault="true">NotExplicit</ParentalWarningType>
+			<IsMultiArtistCompilation>false</IsMultiArtistCompilation>
+			<ResourceGroup>
+				<!-- 
+					Even if this Release contains just one SoundRecording, it needs the same ResourceGroup structure as an album.
+					This is because albums and singles are *structurally* the same
+				-->				
+				<ResourceGroup ResourceGroupType="Component">
+					<SequenceNumber>1</SequenceNumber>
+					<ResourceGroupContentItem>
+						<SequenceNumber>1</SequenceNumber>
+						<ReleaseResourceReference>A1</ReleaseResourceReference>
+						<IsInstantGratificationResource>false</IsInstantGratificationResource>
+						<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+					</ResourceGroupContentItem>
+				</ResourceGroup>
+				<LinkedReleaseResourceReference>A2</LinkedReleaseResourceReference>
+			</ResourceGroup>
+		</Release>
+		<TrackRelease>
+			<ReleaseReference>R1</ReleaseReference>
+			<ReleaseId>
+				<ProprietaryId Namespace="PADPIDA2013042401U">00028948530434_GBBBC2200191_R1</ProprietaryId>
+			</ReleaseId>
+			<DisplayTitleText IsDefault="true" LanguageAndScriptCode="en">Mozart: Lucio Silla, K. 135 - Overture</DisplayTitleText>
+			<DisplayTitle IsDefault="true" LanguageAndScriptCode="en">
+				<TitleText>Mozart: Lucio Silla, K. 135 - Overture</TitleText>
+			</DisplayTitle>
+			<AdditionalTitle IsDefault="true" LanguageAndScriptCode="en" TitleType="FormalTitle">
+				<TitleText>Overture</TitleText>
+			</AdditionalTitle>
+			<AdditionalTitle IsDefault="true" LanguageAndScriptCode="en" TitleType="GroupingTitle">
+				<TitleText>Lucio Silla, K. 135</TitleText>
+			</AdditionalTitle>
+			<ReleaseResourceReference>A1</ReleaseResourceReference>
+			<ReleaseLabelReference IsDefault="true">P11</ReleaseLabelReference>
+			<Genre IsDefault="true">
+				<GenreText>Classical</GenreText>
+			</Genre>
+		</TrackRelease>
+	</ReleaseList>
+</ernm:NewReleaseMessage>
