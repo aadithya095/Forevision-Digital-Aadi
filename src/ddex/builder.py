@@ -5,10 +5,11 @@ from ddex.party import Party
 
 class Builder:
     '''Build Ddex Xml file'''
-    def __init__(self, sender, receiver, release_profile='Audio'):
+    def __init__(self, sender, receiver, release_profile='Audio', **parties):
         self.sender = sender
         self.receiver = receiver
         self.release_profile = release_profile
+        self.parties = parties
 
     def build(self):
         root_attrib = {
@@ -24,7 +25,9 @@ class Builder:
 
         root = et.Element(root_name, root_attrib)
         messageHeader = self._build_message_header()
+        partyList = self._build_partylist(**self.parties)
         root.append(messageHeader)
+        root.append(partyList)
         return root
 
     def save(self, root, output="./test.xml"):
@@ -34,5 +37,13 @@ class Builder:
 
     def _build_message_header(self):
         return MessageHeader(self.sender, self.receiver).create()
+
+    def _build_partylist(self, **parties):
+        party_list_tag = et.Element('PartyList')
+        for party in parties.items():
+            party_list_tag.append(party[1])
+
+        return party_list_tag
+
 
 
