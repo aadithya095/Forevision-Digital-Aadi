@@ -82,3 +82,10 @@ xml = reparse_xml(message)
 ### prettyprint
 This function is used tp print the reparsed_xml output to the console. Only to be used for testing purposes and during development.
 
+
+# Testing the DDEX module
+In order to test the DDEX module go to the `./src/tests/` directory and run the following command:
+```
+$ pytest -vv # for very verbose and detailed 
+$ pytest # for normal output
+```
