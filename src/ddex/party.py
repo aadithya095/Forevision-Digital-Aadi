@@ -8,7 +8,7 @@ class Party:
         self.fullname = fullname
         self.party_role = party_role
 
-    def create(self):
+    def __call__(self):
         party_tag = et.Element('Party')
         if self.party_role:
             add_subelement_with_text(party_tag, 'PartyId', self.party_id)

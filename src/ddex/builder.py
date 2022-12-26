@@ -45,5 +45,3 @@ class Builder:
 
         return party_list_tag
 
-
-

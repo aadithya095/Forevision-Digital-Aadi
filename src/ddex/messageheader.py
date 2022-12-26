@@ -20,7 +20,7 @@ class MessageHeader:
         self.sender = sender
         self.recipient = recipient
 
-    def create(self):
+    def __call__(self):
         message_header_tag = et.Element("MessageHeader")
         add_subelement_with_text(message_header_tag, "MessageThreadId", self.thread_id)
         add_subelement_with_text(message_header_tag, "MessageId", self.message_id)
