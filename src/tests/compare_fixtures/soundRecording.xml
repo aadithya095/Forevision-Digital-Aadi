@@ -1,0 +1,48 @@
+<SoundRecording>
+    <ResourceReference>A20</ResourceReference>
+    <Type>MusicalWorkSoundRecording</Type>
+    <SoundRecordingEdition>
+       <ResourceId>
+          <ISRC>JPTO09405080</ISRC>
+       </ResourceId>
+       <PLine>
+          <Year>1994</Year>
+          <PLineText>RandomText</PLineText>
+       </PLine>
+       <TechnicalDetails>
+          <TechnicalResourceDetailsReference>T20</TechnicalResourceDetailsReference>
+          <DeliveryFile>
+             <Type>AudioFile</Type>
+             <File>
+                <URI>0094631432057_01_020.wav</URI>
+             </File>
+          </DeliveryFile>
+          <ClipDetails>
+             <TechnicalResourceDetailsReference>T20C</TechnicalResourceDetailsReference>
+             <ClipType>Preview</ClipType>
+             <Timing>
+                <StartPoint>45</StartPoint>
+             </Timing>
+             <ExpressionType>Instructive</ExpressionType>
+          </ClipDetails>
+       </TechnicalDetails>
+    </SoundRecordingEdition>
+    <DisplayTitleText>song</DisplayTitleText>
+    <DisplayTitle ApplicableTerritoryCode="Worldwide" IsDefault="true">
+       <TitleText>song</TitleText>
+    </DisplayTitle>
+    <DisplayArtistName IsDefault="true">artist</DisplayArtistName>
+    <DisplayArtist SequenceNumber="1">
+       <ArtistPartyReference>singer</ArtistPartyReference>
+       <DisplayArtistRole>MainArtist</DisplayArtistRole>
+    </DisplayArtist>
+    <Contributor SequenceNumber="1">
+       <ContributorPartyReference>singer</ContributorPartyReference>
+       <Role>Artist</Role>
+    </Contributor>
+    <Duration>PT3M42S</Duration>
+    <CreationDate IsApproximate="true">1993-12-01</CreationDate>
+    <ParentalWarningType>NoAdviceAvailable</ParentalWarningType>
+    <IsInstrumental>false</IsInstrumental>
+    <LanguageOfPerformance>ja</LanguageOfPerformance>
+ </SoundRecording>

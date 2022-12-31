@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="sideNavTopNav.css">
+        <link rel="stylesheet" href="content.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <title>File to ddex</title>
+    </head>
+
+    <body>
+        <header>
+            <!-- Top nav -->
+            <nav class="topNavContainer">
+                <nav class="topNav">
+                    <div class="openMenu">
+                        <i class=" menuIcon fa fa-reorder" id="iconShow"></i>
+                    </div>
+                    <div class="logo">
+                        <img src="logo1.svg" alt="logo">
+                    </div>
+                </nav>
+            </nav>
+            <!-- Sidenav -->
+            <div class="blurOnsidenavOn"></div>
+            <nav class="sideNavContainer" id="sideNavContainerToggle">
+                <div class="menuButton">
+                    <i class=" menuIcon fa fa-remove" id="iconHide"></i>
+                </div>
+                <nav class="sideNav">
+                    <div class="menuItems">
+                        <a href="#">
+                            <li>Convert File Format</li>
+                        </a>
+                        <a href="#">
+                            <li>Uploaded Files</li>
+                        </a>
+                        <a href="#">
+                            <li>SignOut</li>
+                        </a>
+                    </div>
+                </nav>
+            </nav>
+        </header>
+
+        <div class="contentAlignCenter">
+            <div class="mainContentContainer">
+                <div class="headContent">
+                    <h1>Convert File To DDEX format</h1>
+                </div>
+                <div class="instructionSection">
+                    <h2>Instruction:</h2>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum nisi aperiam facere
+                        accusantium
+                        veniam adipisci, consequuntur esse nostrum cum. Possimus in suscipit quidem nemo vitae eaque
+                        minus ratione aut nulla! Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
+                        blanditiis tempora tempore maiores mollitia iusto expedita, enim distinctio tenetur culpa
+                        modi
+                        aspernatur voluptate eius reprehenderit laborum. Ab aspernatur dicta voluptate!asdf
+                    </p>
+
+                </div>
+
+                <div class="uploadAndDescription">
+                    <form action="#" method="post">
+                        <div class="contentSection">
+                            <label for="inputFile">Input File</label>
+                            <br>
+                            <div class="inputDnD">
+                                <!-- <input type="file" class="form-control-file" id="inputFile"
+                                accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                                data-title = "Drag and drop excel file"
+                                value="add"> -->
+                                <div class="form-control-file">Drag and drop</div>
+                            </div>
+                            <br>
+
+                            <label for="description">Add Description</label><br>
+                            <div class="descriptionContainer">
+                                <textarea id="description" cols="30" rows="10" placeholder="Add Description"
+                                    style="resize: none;"></textarea>
+
+                            </div>
+
+                        </div>
+                        <div class="submitContent">
+                            <button type="reset">Submit to convert</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            
+        </footer>
+
+        <script src=" navFunction.js"></script>
+    </body>
+
+</html>

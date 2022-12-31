@@ -1,0 +1,162 @@
+* {
+  letter-spacing: 2px;
+}
+
+.contentAlignCenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+}
+
+.mainContentContainer {
+  /* position: absolute; */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--secondary);
+  width: 900px;
+  /* height: 700px; */
+  border-radius: 30px;
+}
+
+.mainContentContainer > .headContent {
+  text-align: center;
+  padding: 10px;
+}
+
+.mainContentContainer > .instructionSection {
+  background-color: var(--invOfPrimary);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.instructionSection > p {
+  text-indent: 20px;
+  padding: 10px;
+}
+
+/*  */
+.uploadAndDescription > form > .contentSection {
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: var(--invOfPrimary);
+  /* background-color: red; */
+}
+
+.contentSection > label {
+  font-weight: bold;
+}
+
+.contentSection > .descriptionContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.descriptionContainer > #description {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 20px;
+  width: 500px;
+  background-color: var(--invOfPrimary);
+  color: var(--primary);
+  margin-bottom: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.descriptionContainer > #description:hover {
+  border: 1px solid black;
+  width: 530px;
+}
+
+/* drag and drop */
+.inputDnD {
+  /* background: #000; */
+  height: 102px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.inputDnD .form-control-file {
+  cursor: pointer;
+  /* box-shadow: 0 0 5px solid currentColor; */
+}
+
+.form-control-file {
+  padding-top: 40px;
+  background-color: var(--invOfPrimary);
+  content: attr(data-title);
+  width: 500px;
+  height: 60px;
+  text-align: center;
+  border: 1px solid var(--primary);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* overflow: hidden; */
+  border-radius: 20px;
+}
+
+/* .form-control-file[type='file'] {
+    content: 'ads';
+
+} */
+/* .form-control-file::file-selector-button {
+    display: none;
+  } */
+.inputDnD .form-control-file:hover {
+  width: 530px;
+  -webkit-box-shadow: inset 0px 0px 0px 2px currentColor;
+          box-shadow: inset 0px 0px 0px 2px currentColor;
+}
+
+/* drag and drop end */
+/* submit button */
+.submitContent {
+  padding: 10px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* background-color: red; */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.submitContent > button {
+  font-size: 1em;
+  padding: 15px 30px;
+  background-color: var(--primary);
+  color: var(--invOfPrimary);
+  border: 1px solid var(--additional1);
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.submitContent > button:hover {
+  font-size: 1.1em;
+  padding: 15px 60px;
+}
+
+footer {
+  height: 80px;
+}/*# sourceMappingURL=content.css.map */

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/43"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http:/ /ddex.net/xml/ern/43 http://ddex.net/xml/ern/43/release-notification.xsd"
+   xsi:schemaLocation="http://ddex.net/xml/ern/43 http://ddex.net/xml/ern/43/release-notification.xsd"
    ReleaseProfileVersionId="Audio" LanguageAndScriptCode="en" AvsVersionId="3">
    <MessageHeader>
       <MessageThreadId>Test1</MessageThreadId>

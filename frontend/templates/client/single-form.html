@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Single Release Form
+{% endblock title %}
+
+{% block content %}
+<form method='post'>
+    {% csrf_token %}
+    <h1>Artist</h1>
+    {{ artist_form.as_div }} <!-- Artist form from django --> 
+    <br>
+    <h1>Image</h1>
+    {{ image_form.as_div }}
+    <label for="image_file">File: </label>
+    <input type='file' name='image_file'>
+    <br>
+     <h1>Song</h1>
+    {{ song_form.as_div }} 
+    <h1>Clip</h1>
+    {{ clip_form.as_div }} <!-- Clip form from django --> 
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock content %}

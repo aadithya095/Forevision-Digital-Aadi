@@ -149,7 +149,7 @@
             <SubGenre>Classical Crossover</SubGenre>
          </Genre>
          <ReleaseVisibilityReference>V0</ReleaseVisibilityReference>
-         <ParentalWarningType>NoAdviceAvailable</ParentalWarningType>
+         <ParentalWarningType>Unknown</ParentalWarningType>
          <RelatedRelease>
             <ReleaseRelationshipType>IsFromAudio</ReleaseRelationshipType>
             <ReleaseId>

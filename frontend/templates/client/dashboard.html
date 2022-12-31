@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}
+    Dashboard - {{ user.username }}
+{% endblock title %}
+{% block content %}
+    You are in dashboard of {{ user.username }}
+    {{ a }}
+    {% if error %}<h1>{{ message }}</h1>{% endif %}
+{% endblock content %}

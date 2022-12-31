@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #202428;
+  --slightPrimary: #393744;
+  --invOfPrimary: #fff;
+  --secondary: #e8B738;
+  --additional1: #aeaeae;
+  --fonsize: 1em;
+}
+
+/* Nav panel of top */
+.topNavContainer {
+  background-color: var(--primary);
+  height: 80px;
+}
+
+.topNav > .logo {
+  position: relative;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.openMenu {
+  position: absolute;
+  padding: 20px;
+  z-index: 1;
+  /* background-color: red; */
+}
+
+.openMenu > .menuIcon {
+  color: #fff;
+  font-size: 2em;
+  /* background-color: red; */
+  cursor: pointer;
+}
+
+/* Top nav panel end */
+/* Sidenav */
+.sideNavContainer {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: var(--primary);
+  z-index: 2;
+  display: none;
+}
+
+/* Menu icon */
+.sideNavContainer > .menuButton {
+  /* Close icon */
+  position: absolute;
+  width: 100%;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+  -ms-flex-pack: right;
+  justify-content: right;
+}
+
+.sideNavContainer > .menuButton > .menuIcon {
+  color: #fff;
+  font-size: 2em;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* sidenav elements */
+.sideNavContainer > .sideNav {
+  /* border: 3px solid red; */
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0px 10px;
+  /* vertical-align: bottom; */
+}
+
+.sideNav > .menuItems > a > li {
+  list-style: none;
+  padding: 20px;
+  margin: 50px 0px;
+  /* border: 1px solid #1b1b1b; */
+  border-radius: 10px;
+  background-color: var(--slightPrimary);
+  text-align: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* hover */
+.menuItems > a > li:hover {
+  border: 1px solid #383838;
+  background-color: #3d3b3b;
+  font-size: 1.1em;
+}
+
+.menuItems a {
+  color: var(--invOfPrimary);
+  text-decoration: none;
+}
+
+/* Sidenav Blur */
+.blurOnsidenavOn {
+  display: none;
+  /*   top: 0; */
+  position: absolute;
+  /* background-color: red; */
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  width: 100%;
+  height: calc(100% - 80px);
+  z-index: 2;
+}/*# sourceMappingURL=sideNavTopNav.css.map */

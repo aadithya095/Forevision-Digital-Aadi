@@ -8,8 +8,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -18,7 +16,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'dashboard'
+    'models',
+    'customadmin',
+    'client',
 ]
 
 MIDDLEWARE = [
@@ -90,3 +90,6 @@ STATICFILES_DIRS = [
         ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/resources/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'resource/')

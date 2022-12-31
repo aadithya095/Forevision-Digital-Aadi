@@ -1,0 +1,43 @@
+<TechnicalDetails>
+    <TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+    <DeliveryFile>
+        <Type>AudioFile</Type>
+        <AudioCodecType>MP3</AudioCodecType>
+        <BitRate UnitOfMeasure="kbps">320</BitRate>
+        <NumberOfChannels>2</NumberOfChannels>
+        <SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+        <Duration>PT0H7M4S</Duration>
+        <File>
+            <URI>test.mp3</URI>
+            <HashSum>
+                <Algorithm>sha1</Algorithm>
+                <HashSumValue>a94a8fe5ccb19ba61c4c0873d391e987982fbbd3</HashSumValue>
+            </HashSum>
+        </File>
+    </DeliveryFile>
+    <IsClip>false</IsClip>
+    <ClipDetails>
+        <TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+        <ClipType>Preview</ClipType>
+        <Timing>
+            <StartPoint>48</StartPoint>
+            <DurationUsed>PT0H0M30S</DurationUsed>
+        </Timing>
+        <ExpressionType>Informative</ExpressionType>
+        <DeliveryFile>
+            <Type>AudioFile</Type>
+            <AudioCodecType>MP3</AudioCodecType>
+            <BitRate UnitOfMeasure="kbps">320</BitRate>
+            <NumberOfChannels>2</NumberOfChannels>
+            <SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+            <Duration>PT0H7M4S</Duration>
+            <File>
+                <URI>test.mp3</URI>
+                <HashSum>
+                    <Algorithm>sha1</Algorithm>
+                    <HashSumValue>a94a8fe5ccb19ba61c4c0873d391e987982fbbd3</HashSumValue>
+                </HashSum>
+            </File>
+        </DeliveryFile>
+    </ClipDetails>				
+</TechnicalDetails>

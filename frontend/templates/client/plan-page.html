@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}
+    Choose Plan for Music Distribution
+{% endblock title %}
+{% block content %}
+    <a href="{% url 'client:single_form' %}">Plan for Single Release</a>
+    <a href="#Album-Form">Plan for Album Release</a>
+    <a href="#CRBT-Form">Plan for CRBT Release</a>
+{% endblock content %}
