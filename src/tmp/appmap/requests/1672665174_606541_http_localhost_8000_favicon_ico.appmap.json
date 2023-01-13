@@ -1,0 +1,207 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/favicon.ico",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "localhost:8000",
+          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0",
+          "Accept": "image/avif,image/webp,*/*",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Referer": "http://localhost:8000/",
+          "Dnt": "1",
+          "Connection": "keep-alive",
+          "Sec-Fetch-Dest": "image",
+          "Sec-Fetch-Mode": "no-cors",
+          "Sec-Fetch-Site": "same-origin"
+        }
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "class": "django.template.base.Template",
+        "object_id": 140125456693136,
+        "value": "<Template template_string=\"<!DOCTYPE html><htm...\">"
+      },
+      "path": "<unknown source>",
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.UnknownSource",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.000476004000120156,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "DENY",
+          "Content-Length": "2450",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin",
+          "Cross-Origin-Opener-Policy": "same-origin"
+        },
+        "status": 404
+      },
+      "parent_id": 1,
+      "elapsed": 0.004898133999631682,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.10.8"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "",
+      "branch": "f-ddex-iamu",
+      "commit": "f89df24f50ae6bb9bb1d0b49771bcb391f557202",
+      "status": [
+        "M client/views.py",
+        "D dashboard/migrations/__init__.py",
+        "?? ../.coverage",
+        "?? ../.idea/",
+        "?? ../.vscode/",
+        "?? ../appmap.yml",
+        "?? .coverage",
+        "?? appmap.yml",
+        "?? tmp/"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "4.1.3"
+      }
+    ],
+    "name": "GET /favicon.ico (404) - 13:12:54.606",
+    "timestamp": 1672665174.606541,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "aa3a8a348807c05b1611add38f8e4a172ad401467276b9619b88162cc862e0c8",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "classes",
+        "digest": "df8fde1e5e2b1c3c7e9319172e44a651b26f784b1927e2c7f4d8991ab5a4fbd8",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "a194d618d3e35095129d171476e19d1c0aed15863964bd5bbaf9f538e31cbf8b",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "info",
+        "digest": "af7e7fdfc1557d6e0ef6835c05ff78b4f38e9f6eaffa9710bb11d970d4bef7b1",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "labels",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "c8d3770cde2038b3b5de759b34aeb6cc00d2cda46720c593df8d9d16c8376e1d",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "packages",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "trace",
+        "digest": "2915174ea799b6cd296bfda5923a6acac6b7592fd5b8d1151e7b4ac27aa01847",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "9c690703286402d15af92be8477da5025a64a23fe4b369381673ecfb1dd71fba",
+        "canonicalization_algorithm": "update",
+        "digest": "4572e935cdbc6fb75eabf267675cfcb33f134d4e2747a608f35ea1d0b1094038",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /favicon.ico"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/UnknownSource",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false,
+          "location": ""
+        }
+      ]
+    }
+  ]
+}

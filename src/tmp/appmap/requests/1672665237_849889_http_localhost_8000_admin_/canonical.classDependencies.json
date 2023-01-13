@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "HTTP server requests->POST /admin/",
+    "callee": "Database->BEGIN"
+  },
+  {
+    "caller": "HTTP server requests->POST /admin/",
+    "callee": "Database->INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('od696h2yxxuzs2t8ju56ca330mw9a7lp', 'e30:1pCKdV:ds9GZ-ubrwdSoTq8D7--tmzXiMuhNAjtDiWZH5ajZO0', '2023-01-16 13:13:53.513058')"
+  },
+  {
+    "caller": "HTTP server requests->POST /admin/",
+    "callee": "Database->SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'od696h2yxxuzs2t8ju56ca330mw9a7lp' LIMIT 1"
+  },
+  {
+    "caller": "HTTP server requests->POST /admin/",
+    "callee": "Database->SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = 'iamu' LIMIT 21"
+  },
+  {
+    "caller": "HTTP server requests->POST /admin/",
+    "callee": "Database->UPDATE \"auth_user\" SET \"last_login\" = '2023-01-02 13:13:55.343992' WHERE \"auth_user\".\"id\" = 1"
+  },
+  {
+    "caller": "HTTP server requests->POST /admin/",
+    "callee": "Database->UPDATE \"django_session\" SET \"session_data\" = '.eJxVjEEOwiAQRe_C2pCORaAu3fcMZAZmpGogKe3KeHfbpAvd_vfef6uA65LD2ngOU1JXBer0uxHGJ5cdpAeWe9WxlmWeSO-KPmjTY038uh3u30HGlrcaGUicCEnsrZgBADwl72x3Fk-mZ9dH6nijCOJcung0bP3AaA1EQ-rzBQ7eOMw:1pCKdY:JaxxlMZz22bXrHEOWHr34f1ZyO6AIR4o_qL9m5JomMw', \"expire_date\" = '2023-01-16 13:13:56.601731' WHERE \"django_session\".\"session_key\" = 'od696h2yxxuzs2t8ju56ca330mw9a7lp'"
+  }
+]

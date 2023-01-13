@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /user/single-form/content.css",
+    "parameters": "()",
+    "status": 404
+  }
+]

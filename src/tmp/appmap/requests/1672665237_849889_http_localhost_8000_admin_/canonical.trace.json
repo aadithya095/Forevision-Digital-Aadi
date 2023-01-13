@@ -1,0 +1,171 @@
+[
+  {
+    "kind": "http_server_request",
+    "route": "POST /admin/",
+    "parameter_names": [
+      "csrfmiddlewaretoken",
+      "username",
+      "password"
+    ],
+    "status_code": 302,
+    "children": [
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = ? LIMIT ?"
+        },
+        "analyzed_query": {
+          "actions": [
+            "select"
+          ],
+          "tables": [
+            "auth_user"
+          ],
+          "columns": [
+            "auth_user.date_joined",
+            "auth_user.email",
+            "auth_user.first_name",
+            "auth_user.id",
+            "auth_user.is_active",
+            "auth_user.is_staff",
+            "auth_user.is_superuser",
+            "auth_user.last_login",
+            "auth_user.last_name",
+            "auth_user.password",
+            "auth_user.username"
+          ],
+          "joinCount": 0
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = ? LIMIT ?"
+        },
+        "analyzed_query": {
+          "actions": [
+            "select"
+          ],
+          "tables": [
+            "auth_user"
+          ],
+          "columns": [
+            "auth_user.date_joined",
+            "auth_user.email",
+            "auth_user.first_name",
+            "auth_user.id",
+            "auth_user.is_active",
+            "auth_user.is_staff",
+            "auth_user.is_superuser",
+            "auth_user.last_login",
+            "auth_user.last_name",
+            "auth_user.password",
+            "auth_user.username"
+          ],
+          "joinCount": 0
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "SELECT ? AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = ? LIMIT ?"
+        },
+        "analyzed_query": {
+          "actions": [
+            "select"
+          ],
+          "tables": [
+            "django_session"
+          ],
+          "columns": [
+            "django_session.session_key"
+          ],
+          "joinCount": 0
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "BEGIN"
+        },
+        "analyzed_query": {
+          "actions": [],
+          "tables": [],
+          "columns": [],
+          "joinCount": 0
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES (?, ?, ?)"
+        },
+        "analyzed_query": {
+          "actions": [
+            "insert"
+          ],
+          "tables": [
+            "django_session"
+          ],
+          "columns": [
+            "expire_date",
+            "session_data",
+            "session_key"
+          ],
+          "joinCount": 0
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "UPDATE \"auth_user\" SET \"last_login\" = ? WHERE \"auth_user\".\"id\" = ?"
+        },
+        "analyzed_query": {
+          "actions": [
+            "update"
+          ],
+          "tables": [
+            "auth_user"
+          ],
+          "columns": [
+            "auth_user.id",
+            "last_login"
+          ],
+          "joinCount": 0
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "BEGIN"
+        },
+        "analyzed_query": {
+          "actions": [],
+          "tables": [],
+          "columns": [],
+          "joinCount": 0
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "normalized_query": "UPDATE \"django_session\" SET \"session_data\" = ?, \"expire_date\" = ? WHERE \"django_session\".\"session_key\" = ?"
+        },
+        "analyzed_query": {
+          "actions": [
+            "update"
+          ],
+          "tables": [
+            "django_session"
+          ],
+          "columns": [
+            "django_session.session_key",
+            "expire_date",
+            "session_data"
+          ],
+          "joinCount": 0
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,382 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "POST",
+        "protocol": "HTTP/1.1",
+        "path_info": "/admin/",
+        "normalized_path_info": "/admin/",
+        "mime_type": "application/x-www-form-urlencoded",
+        "headers": {
+          "Content-Length": "116",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Host": "localhost:8000",
+          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Referer": "http://localhost:8000/admin/",
+          "Origin": "http://localhost:8000",
+          "Dnt": "1",
+          "Connection": "keep-alive",
+          "Cookie": "csrftoken=M87JhEuaOhKWjiDCtRp8HIVvMnj484eu",
+          "Upgrade-Insecure-Requests": "1",
+          "Sec-Fetch-Dest": "document",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-Site": "same-origin",
+          "Sec-Fetch-User": "?1"
+        }
+      },
+      "message": [
+        {
+          "name": "csrfmiddlewaretoken",
+          "class": "builtins.str",
+          "object_id": 139844607374512,
+          "value": "'RnGKpzdCKkg0brl0f1HMg1yjENaOQ66qtlDjw3xCorQMkzOsyIWKNzjEg0jIO0aK'"
+        },
+        {
+          "name": "username",
+          "class": "builtins.str",
+          "object_id": 139844536365488,
+          "value": "'iamu'"
+        },
+        {
+          "name": "password",
+          "class": "builtins.str",
+          "object_id": 139844536356016,
+          "value": "'mojha666'"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = 'iamu' LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0005010139993828489,
+      "id": 3,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = 'iamu' LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0.0001651519996812567,
+      "id": 5,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'mz7n7w9dlebhlzb14xc1kzfpaspbizbz' LIMIT 1",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 6,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 6,
+      "elapsed": 0.00028091999956814107,
+      "id": 7,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "BEGIN",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 8,
+      "elapsed": 0.00003609799932746682,
+      "id": 9,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('mz7n7w9dlebhlzb14xc1kzfpaspbizbz', 'e30:1pFXbk:W9Zvgw1TRN3FA6AgWUTf_9YOzMTCK_AhMd920nszxVs', '2023-01-25 09:41:20.430932')",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 10,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 10,
+      "elapsed": 0.00029237099988677073,
+      "id": 11,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"auth_user\" SET \"last_login\" = '2023-01-11 09:41:20.741526' WHERE \"auth_user\".\"id\" = 1",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 12,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.28684651399998984,
+      "id": 13,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "BEGIN",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 14,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 14,
+      "elapsed": 0.000037350999264162965,
+      "id": 15,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "sql_query": {
+        "sql": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjEEOwiAQRe_C2pCORaAu3fcMZAZmpGogKe3KeHfbpAvd_vfef6uA65LD2ngOU1JXBer0uxHGJ5cdpAeWe9WxlmWeSO-KPmjTY038uh3u30HGlrcaGUicCEnsrZgBADwl72x3Fk-mZ9dH6nijCOJcung0bP3AaA1EQ-rzBQ7eOMw:1pFXbl:5KpnpGGO4fD17aymDbKEqqrXA3_uiljh1XWRJqRai5w', \"expire_date\" = '2023-01-25 09:41:21.039552' WHERE \"django_session\".\"session_key\" = 'mz7n7w9dlebhlzb14xc1kzfpaspbizbz'",
+        "database_type": "sqlite",
+        "server_version": "3.40.1"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 5
+    },
+    {
+      "parent_id": 16,
+      "elapsed": 0.0002778839989332482,
+      "id": 17,
+      "event": "return",
+      "thread_id": 5
+    },
+    {
+      "http_server_response": {
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/admin/dashboard/",
+          "X-Frame-Options": "DENY",
+          "Vary": "Cookie",
+          "Content-Length": "0",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin",
+          "Cross-Origin-Opener-Policy": "same-origin"
+        },
+        "status": 302
+      },
+      "parent_id": 1,
+      "elapsed": 1.133840323998811,
+      "id": 18,
+      "event": "return",
+      "thread_id": 5
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.10.9"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "",
+      "branch": "f-ddex-iamu",
+      "commit": "f89df24f50ae6bb9bb1d0b49771bcb391f557202",
+      "status": [
+        "M ../docs/assets/csv/testdata.csv",
+        "M client/forms.py",
+        "M client/views.py",
+        "D dashboard/migrations/__init__.py",
+        "D  ddex/__init__.py",
+        "D  ddex/builder.py",
+        "D  ddex/fixtures.py",
+        "D  ddex/messageheader.py",
+        "D  ddex/party.py",
+        "D  ddex/resourcelist.py",
+        "D  ddex/tests/party.xml",
+        "D  ddex/utils.py",
+        "?? ../.coverage",
+        "?? ../.idea/",
+        "?? ../.vscode/",
+        "?? ../appmap.yml",
+        "?? ../docs/assets/appmap.yml",
+        "?? ../docs/assets/pkg/",
+        "?? ../docs/assets/samples/appmap.yml",
+        "?? .coverage",
+        "?? appmap.yml",
+        "?? client/auth_forms.py",
+        "?? ddex/",
+        "?? tmp/"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "4.1.3"
+      }
+    ],
+    "name": "POST /admin/ (302) - 09:41:21.283",
+    "timestamp": 1673430081.283751,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "42586baa8780ac9761ae23d28ccd06a11cf6314ed9a39e58aa6b94a22eac9143",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "classes",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "3e36aeca51834e4a3d8dd3a83ebeefb460033c47755fca2391106919692270c4",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "info",
+        "digest": "a747914d53b51eed12c8a4bc808178d6af4ece158af01584109e90e9053fe935",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "labels",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "71094a3860dc167d6f3d68cfe64bc297f20921046b467f0a288c78430f939de2",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "packages",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "b3318968183362e6a10a87959843f539b5fa40c14825a5d48d1989932d4b22af",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "d2e84e781a050fdb7604fbc35d7ba162df596e0f6a87edcd0aefcadf7e8ecaca",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "trace",
+        "digest": "58bf7e116e4d25e7105aa164b29c1cc4a5d060031c7d0d3e62f944897c8543f5",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "46aa8bc4d2fd05d69426bc8397e54f3351cae9338b040954eed1a43a8be9c2ce",
+        "canonicalization_algorithm": "update",
+        "digest": "5022f4cea3f99fcc30515f0a2f7f0e39b960e8ea9a8f4f95d1f8c09adc174263",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /admin/"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = 'iamu' LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT 1 AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = 'mz7n7w9dlebhlzb14xc1kzfpaspbizbz' LIMIT 1"
+        },
+        {
+          "type": "query",
+          "name": "BEGIN"
+        },
+        {
+          "type": "query",
+          "name": "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES ('mz7n7w9dlebhlzb14xc1kzfpaspbizbz', 'e30:1pFXbk:W9Zvgw1TRN3FA6AgWUTf_9YOzMTCK_AhMd920nszxVs', '2023-01-25 09:41:20.430932')"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"auth_user\" SET \"last_login\" = '2023-01-11 09:41:20.741526' WHERE \"auth_user\".\"id\" = 1"
+        },
+        {
+          "type": "query",
+          "name": "UPDATE \"django_session\" SET \"session_data\" = '.eJxVjEEOwiAQRe_C2pCORaAu3fcMZAZmpGogKe3KeHfbpAvd_vfef6uA65LD2ngOU1JXBer0uxHGJ5cdpAeWe9WxlmWeSO-KPmjTY038uh3u30HGlrcaGUicCEnsrZgBADwl72x3Fk-mZ9dH6nijCOJcung0bP3AaA1EQ-rzBQ7eOMw:1pFXbl:5KpnpGGO4fD17aymDbKEqqrXA3_uiljh1XWRJqRai5w', \"expire_date\" = '2023-01-25 09:41:21.039552' WHERE \"django_session\".\"session_key\" = 'mz7n7w9dlebhlzb14xc1kzfpaspbizbz'"
+        }
+      ]
+    }
+  ]
+}

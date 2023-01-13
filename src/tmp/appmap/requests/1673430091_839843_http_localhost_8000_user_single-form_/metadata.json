@@ -1,0 +1,127 @@
+{
+  "language": {
+    "name": "python",
+    "engine": "CPython",
+    "version": "3.10.9"
+  },
+  "client": {
+    "name": "appmap",
+    "url": "https://github.com/applandinc/appmap-python"
+  },
+  "git": {
+    "repository": "",
+    "branch": "f-ddex-iamu",
+    "commit": "f89df24f50ae6bb9bb1d0b49771bcb391f557202",
+    "status": [
+      "M ../docs/assets/csv/testdata.csv",
+      "M client/forms.py",
+      "M client/views.py",
+      "D dashboard/migrations/__init__.py",
+      "D  ddex/__init__.py",
+      "D  ddex/builder.py",
+      "D  ddex/fixtures.py",
+      "D  ddex/messageheader.py",
+      "D  ddex/party.py",
+      "D  ddex/resourcelist.py",
+      "D  ddex/tests/party.xml",
+      "D  ddex/utils.py",
+      "?? ../.coverage",
+      "?? ../.idea/",
+      "?? ../.vscode/",
+      "?? ../appmap.yml",
+      "?? ../docs/assets/appmap.yml",
+      "?? ../docs/assets/pkg/",
+      "?? ../docs/assets/samples/appmap.yml",
+      "?? .coverage",
+      "?? appmap.yml",
+      "?? client/auth_forms.py",
+      "?? ddex/",
+      "?? tmp/"
+    ]
+  },
+  "frameworks": [
+    {
+      "name": "Django",
+      "version": "4.1.3"
+    }
+  ],
+  "name": "GET /user/single-form/ (200) - 09:41:31.839",
+  "timestamp": 1673430091.839843,
+  "recorder": {
+    "name": "record_requests"
+  },
+  "fingerprints": [
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "classDependencies",
+      "digest": "c39590db0ac808a08a02068f931b9c5d8657d89b648a65440a15f21858490866",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "classes",
+      "digest": "1ab662cae7d09efdd0cdb88a926b472c64f13cdd52e3500defea95aa3d7e62f2",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "httpClientRequests",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "httpServerRequests",
+      "digest": "6f2efb7edb984e705727b9b936aa21a4182c0f491cb1415c25be42e36b64f833",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "info",
+      "digest": "f092750e006aae33cc534b7f73326376f49e27b8756a2080e7c521de0c2303bd",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "labels",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "packageDependencies",
+      "digest": "ec4b53d24502a043535690eee399c9be307b370090051d0046fb1a086195cdd7",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "packages",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "sqlNormalized",
+      "digest": "8e9ae93b3ddfd3b10f17570e0d244df8cb61cdd902fdd70614afb2551e06adb6",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "sqlTables",
+      "digest": "d2e84e781a050fdb7604fbc35d7ba162df596e0f6a87edcd0aefcadf7e8ecaca",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "trace",
+      "digest": "78cd417144f4d8a25cc5dfa638c52b8c265cff3698a3216236d095177c8dab40",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "213a83aa7ecb8dd59c2eec3266cfd6226b5e15287c78318c6109a48d76d299a1",
+      "canonicalization_algorithm": "update",
+      "digest": "06c0fdedbead47ed326578eeb2c7f91db56a27258d58e257c11505c44ed358b4",
+      "fingerprint_algorithm": "sha256"
+    }
+  ]
+}

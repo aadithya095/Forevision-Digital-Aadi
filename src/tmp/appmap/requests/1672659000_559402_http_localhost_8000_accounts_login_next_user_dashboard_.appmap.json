@@ -1,0 +1,215 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/accounts/login/",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "localhost:8000",
+          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Dnt": "1",
+          "Connection": "keep-alive",
+          "Upgrade-Insecure-Requests": "1",
+          "Sec-Fetch-Dest": "document",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-Site": "none",
+          "Sec-Fetch-User": "?1"
+        }
+      },
+      "message": [
+        {
+          "name": "next",
+          "class": "builtins.str",
+          "object_id": 139787030135392,
+          "value": "'/user/dashboard/'"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "class": "django.template.base.Template",
+        "object_id": 139787030799952,
+        "value": "<Template template_string=\"<!DOCTYPE html><htm...\">"
+      },
+      "path": "<unknown source>",
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.UnknownSource",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0008385889999544816,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "DENY",
+          "Content-Length": "2484",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin",
+          "Cross-Origin-Opener-Policy": "same-origin"
+        },
+        "status": 404
+      },
+      "parent_id": 1,
+      "elapsed": 0.007828438999922582,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.10.8"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "",
+      "branch": "f-ddex-iamu",
+      "commit": "f89df24f50ae6bb9bb1d0b49771bcb391f557202",
+      "status": [
+        "M client/views.py",
+        "D dashboard/migrations/__init__.py",
+        "?? ../.coverage",
+        "?? ../.idea/",
+        "?? ../.vscode/",
+        "?? ../appmap.yml",
+        "?? .coverage",
+        "?? appmap.yml"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "4.1.3"
+      }
+    ],
+    "name": "GET /accounts/login/ (404) - 11:30:00.559",
+    "timestamp": 1672659000.559402,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "528dcd28c013866af571672e84b7532e820aec26656dba13ea69905b3afaa6c1",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "classes",
+        "digest": "df8fde1e5e2b1c3c7e9319172e44a651b26f784b1927e2c7f4d8991ab5a4fbd8",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "1d3cf563f39380eb13bb4a27602cdb320b91f0d3e4c0f8e9fa02095b90a26eff",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "info",
+        "digest": "f652697460fa0d514323dcd544b0345c5c5bdb7130b9175ebbca7b49380fa821",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "labels",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "c8d3770cde2038b3b5de759b34aeb6cc00d2cda46720c593df8d9d16c8376e1d",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "packages",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "trace",
+        "digest": "236d8ce64ebd276ba593615c07e156504f50b65b8bc3064ae2166c2ab09402bb",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "5058a31c72faa73c9730a07706bfba5486afedf03a2d3a88fa57834e707693f2",
+        "canonicalization_algorithm": "update",
+        "digest": "ad343dd729fddfbc6dbf5b7803d8c96765963a57d71f87df48a6c05ba576ea62",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /accounts/login/"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/UnknownSource",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false,
+          "location": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /user/",
+    "parameters": "()",
+    "status": 404
+  }
+]

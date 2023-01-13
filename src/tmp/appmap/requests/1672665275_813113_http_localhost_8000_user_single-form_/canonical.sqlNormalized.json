@@ -1,0 +1,6 @@
+[
+  "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = ? LIMIT ?",
+  "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > ? AND \"django_session\".\"session_key\" = ?) LIMIT ?",
+  "SELECT \"models_artist\".\"id\", \"models_artist\".\"name\", \"models_artist\".\"role\", \"models_artist\".\"other_role\" FROM \"models_artist\"",
+  "SELECT \"models_song\".\"id\", \"models_song\".\"id_type\", \"models_song\".\"name\", \"models_song\".\"identifier\", \"models_song\".\"album_id\", \"models_song\".\"image_id\", \"models_song\".\"pline_year\", \"models_song\".\"pline_text\", \"models_song\".\"cline_year\", \"models_song\".\"cline_text\", \"models_song\".\"genre\", \"models_song\".\"subgenre\", \"models_song\".\"duration\" FROM \"models_song\""
+]

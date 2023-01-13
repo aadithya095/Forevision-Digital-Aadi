@@ -1,0 +1,6 @@
+[
+  "auth_user",
+  "django_session",
+  "models_artist",
+  "models_song"
+]

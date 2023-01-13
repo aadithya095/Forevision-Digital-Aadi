@@ -1,25 +1,41 @@
 {% extends 'base.html' %}
+{% load stylefilter %}
 {% block title %}
 Single Release Form
 {% endblock title %}
 
 {% block content %}
+{% load stylefilter %}
+{% load static %}
+<link href="{% static 'client/css/forms.css' %}">
 <form method='post'>
     {% csrf_token %}
-    <h1>Artist</h1>
-    {{ artist_form.as_div }} <!-- Artist form from django --> 
-    <br>
-    <h1>Image</h1>
-    {{ image_form.as_div }}
+    Song Name: {{ form.song_name }} <br><br>
+    Song Id Type: {{ form.song_id_type }} <br><br>
+    Song Id: {{ form.song_id }} <br><br>
+    Territory Code: {{ form.territory }} <br><br>
+    Artist Name: {{ form.artist_name }} <br><br>
+    Artist Role: {{ form.artist_role }} <br><br>
+    Pline Year: {{ form.pline_year }} <br><br>
+    Pline Text: {{ form.pline_text }} <br><br>
+    Cline Year: {{ form.cline_year }} <br><br>
+    Cline Text: {{ form.cline_text }} <br><br>
+    Genre: {{ form.genre }} <br><br>
+    Record Label: {{ form.record_label_name }} <br><br>
+    Audio/Video Codec: {{ forms.codec }} <br><br>
+    Bitrate: {{ forms.bitrate }} <br><br>
+    Channels: {{ forms.channels }} <br><br>
+    Sampling: {{ forms.sampling }} <br><br>
+    Duration: {{ forms.duration }} <br><br>
+    Uri: {{ forms.uri }} <br><br>
+    Hash Algorithm: {{ form.hash_algorithm }} <br><br>
+    Hash Value: {{ form.hash_value }} <br><br>
+    Parental Warning: {{ form.parental_warning }} <br><br>
+    Image Id: {{ form.image_id }} <br><br>
+    Image Id Type: {{ form.image_id_type }} <br><br>
+    Image Type: {{ forms.image_type }} <br><br>
     <label for="image_file">File: </label>
     <input type='file' name='image_file'>
-    <br>
-     <h1>Song</h1>
-    {{ song_form.as_div }} 
-    <h1>Clip</h1>
-    {{ clip_form.as_div }} <!-- Clip form from django --> 
-    <br>
-    <br>
     <button type="submit">Submit</button>
 </form>
 {% endblock content %}

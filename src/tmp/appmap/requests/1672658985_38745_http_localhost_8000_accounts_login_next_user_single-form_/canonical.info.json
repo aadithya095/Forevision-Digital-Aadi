@@ -1,0 +1,10 @@
+[
+  {
+    "kind": "http_server_request",
+    "route": "GET /accounts/login/",
+    "parameter_names": [
+      "next"
+    ],
+    "status_code": 404
+  }
+]

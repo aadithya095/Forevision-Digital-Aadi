@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /user/dashboard/content.css",
+    "parameters": "()",
+    "status": 404
+  }
+]

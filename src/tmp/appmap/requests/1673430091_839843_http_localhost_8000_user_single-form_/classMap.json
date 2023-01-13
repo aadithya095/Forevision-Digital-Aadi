@@ -1,0 +1,38 @@
+[
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /user/single-form/"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-01-11 09:41:31.833194' AND \"django_session\".\"session_key\" = 'mz7n7w9dlebhlzb14xc1kzfpaspbizbz') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21"
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/HomeIamuProgramsProjectsForevision_DigitalForevision_Digital_ImForevisionDigitalFrontendTemplatesClientSingleFormHtml",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false,
+        "location": ""
+      }
+    ]
+  }
+]

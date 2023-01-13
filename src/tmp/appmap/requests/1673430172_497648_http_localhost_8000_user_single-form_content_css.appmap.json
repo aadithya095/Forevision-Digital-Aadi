@@ -1,0 +1,223 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/user/single-form/content.css",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "localhost:8000",
+          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0",
+          "Accept": "text/css,*/*;q=0.1",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Referer": "http://localhost:8000/user/single-form/",
+          "Dnt": "1",
+          "Connection": "keep-alive",
+          "Cookie": "csrftoken=wWBnYJh4DkjFfNmKwUhVAerwZJObeXO3; sessionid=mz7n7w9dlebhlzb14xc1kzfpaspbizbz",
+          "Sec-Fetch-Dest": "style",
+          "Sec-Fetch-Mode": "no-cors",
+          "Sec-Fetch-Site": "same-origin"
+        }
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 2
+    },
+    {
+      "receiver": {
+        "class": "django.template.base.Template",
+        "object_id": 139844608056608,
+        "value": "<Template template_string=\"<!DOCTYPE html><htm...\">"
+      },
+      "path": "<unknown source>",
+      "id": 2,
+      "event": "call",
+      "thread_id": 2,
+      "defined_class": "<templates>.UnknownSource",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0.0004725010003312491,
+      "id": 3,
+      "event": "return",
+      "thread_id": 2
+    },
+    {
+      "http_server_response": {
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "DENY",
+          "Content-Length": "2760",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin",
+          "Cross-Origin-Opener-Policy": "same-origin"
+        },
+        "status": 404
+      },
+      "parent_id": 1,
+      "elapsed": 0.005938203999903635,
+      "id": 4,
+      "event": "return",
+      "thread_id": 2
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.10.9"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "",
+      "branch": "f-ddex-iamu",
+      "commit": "f89df24f50ae6bb9bb1d0b49771bcb391f557202",
+      "status": [
+        "M ../docs/assets/csv/testdata.csv",
+        "M client/forms.py",
+        "M client/views.py",
+        "D dashboard/migrations/__init__.py",
+        "D  ddex/__init__.py",
+        "D  ddex/builder.py",
+        "D  ddex/fixtures.py",
+        "D  ddex/messageheader.py",
+        "D  ddex/party.py",
+        "D  ddex/resourcelist.py",
+        "D  ddex/tests/party.xml",
+        "D  ddex/utils.py",
+        "?? ../.coverage",
+        "?? ../.idea/",
+        "?? ../.vscode/",
+        "?? ../appmap.yml",
+        "?? ../docs/assets/appmap.yml",
+        "?? ../docs/assets/pkg/",
+        "?? ../docs/assets/samples/appmap.yml",
+        "?? .coverage",
+        "?? appmap.yml",
+        "?? client/auth_forms.py",
+        "?? ddex/",
+        "?? tmp/"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "4.1.3"
+      }
+    ],
+    "name": "GET /user/single-form/content.css (404) - 09:42:52.497",
+    "timestamp": 1673430172.497648,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "04be62ad22f8c88daa70ee6270d8085161f80930db9769c21bbe950215a63bda",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "classes",
+        "digest": "df8fde1e5e2b1c3c7e9319172e44a651b26f784b1927e2c7f4d8991ab5a4fbd8",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "1428145128fe80fff70a438e8cb3a1448a69f11e916debde14a97f3a62279271",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "info",
+        "digest": "ea6eafc846c089e436eaa00eefefe9a0ef954afbcc67a1bd7488fcc8e32a6efa",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "labels",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "c8d3770cde2038b3b5de759b34aeb6cc00d2cda46720c593df8d9d16c8376e1d",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "packages",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "trace",
+        "digest": "579142b616f90ce4673198260339128a0c82e1afd656c00b9260210ad5487965",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "350f00470095faf6a93cbf8daae185799e0c6915fa53f3574219077f93c4c131",
+        "canonicalization_algorithm": "update",
+        "digest": "0d81e6efe98d018096d3c07445f813d440a2281bbcebbdb441d7e316128bf744",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /user/single-form/content.css"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/UnknownSource",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false,
+          "location": ""
+        }
+      ]
+    }
+  ]
+}

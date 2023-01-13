@@ -1,0 +1,111 @@
+{
+  "language": {
+    "name": "python",
+    "engine": "CPython",
+    "version": "3.10.8"
+  },
+  "client": {
+    "name": "appmap",
+    "url": "https://github.com/applandinc/appmap-python"
+  },
+  "git": {
+    "repository": "",
+    "branch": "f-ddex-iamu",
+    "commit": "f89df24f50ae6bb9bb1d0b49771bcb391f557202",
+    "status": [
+      "M client/views.py",
+      "D dashboard/migrations/__init__.py",
+      "?? ../.coverage",
+      "?? ../.idea/",
+      "?? ../.vscode/",
+      "?? ../appmap.yml",
+      "?? .coverage",
+      "?? appmap.yml"
+    ]
+  },
+  "frameworks": [
+    {
+      "name": "Django",
+      "version": "4.1.3"
+    }
+  ],
+  "name": "GET /favicon.ico (404) - 11:29:27.769",
+  "timestamp": 1672658967.769536,
+  "recorder": {
+    "name": "record_requests"
+  },
+  "fingerprints": [
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "classDependencies",
+      "digest": "aa3a8a348807c05b1611add38f8e4a172ad401467276b9619b88162cc862e0c8",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "classes",
+      "digest": "df8fde1e5e2b1c3c7e9319172e44a651b26f784b1927e2c7f4d8991ab5a4fbd8",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "httpClientRequests",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "httpServerRequests",
+      "digest": "a194d618d3e35095129d171476e19d1c0aed15863964bd5bbaf9f538e31cbf8b",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "info",
+      "digest": "af7e7fdfc1557d6e0ef6835c05ff78b4f38e9f6eaffa9710bb11d970d4bef7b1",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "labels",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "packageDependencies",
+      "digest": "c8d3770cde2038b3b5de759b34aeb6cc00d2cda46720c593df8d9d16c8376e1d",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "packages",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "sqlNormalized",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "sqlTables",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "trace",
+      "digest": "2915174ea799b6cd296bfda5923a6acac6b7592fd5b8d1151e7b4ac27aa01847",
+      "fingerprint_algorithm": "sha256"
+    },
+    {
+      "appmap_digest": "1e54ed64d1e3bf1cbe6241830cc5939666c50e6a54bb3e575c1927c7fae3ed56",
+      "canonicalization_algorithm": "update",
+      "digest": "4572e935cdbc6fb75eabf267675cfcb33f134d4e2747a608f35ea1d0b1094038",
+      "fingerprint_algorithm": "sha256"
+    }
+  ]
+}

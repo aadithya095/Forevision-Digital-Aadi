@@ -1,79 +1,82 @@
-from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import TemplateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
-from models.models import Artist
-from . forms import ArtistForm, ImageForm, SongForm, ClipForm 
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, View
+from django.views.generic.edit import CreateView
+
+from .auth_forms import SignUpForm
+from .forms import SingleReleaseForm
+
+
+class SignUpView(CreateView, SuccessMessageMixin):
+    template_name = "client/sign-up.html"
+    success_url = reverse_lazy('login')
+    form_class = SignUpForm
+    success_message = "Account was created successfully."
+
 
 class SingleReleaseFormView(LoginRequiredMixin, View):
-    '''
+    """
     View for Single Release Form. Client will enter the data for a single release in this form.
-    '''
+    """
     template_name = 'client/single-form.html'
     success_template = 'client/dashboard.html'
 
     def get(self, request):
-        '''Handles GET method'''
-        artist_form = ArtistForm()
-        song_form = SongForm()
-        image_form = ImageForm()
-        clip_form = ClipForm()
+        """Handles GET method"""
+        form = SingleReleaseForm()
 
         context = {
-                'artist_form': artist_form,
-               'song_form': song_form,
-                'image_form': image_form,
-                'clip_form': clip_form,
-                }
+            'form': form
+        }
         return render(request, self.template_name, context=context)
 
     def post(self, request):
-        '''Handles POST method'''
+        """Handles POST method"""
 
         context = {
-                'user':request.user,
-                }
+            'user': request.user,
+        }
 
-        song_form = SongForm(request.POST)
-        image_form = ImageForm(request.POST)
-        clip_form = ClipForm(request.POST)
-        artist_form = ArtistForm(request.POST)
-
-        songvalid = song_form.is_valid()
-        imagevalid = image_form.is_valid()
-        clipvalid = clip_form.is_valid()
-        artistvalid = artist_form.is_valid()
-
-        if artistvalid and imagevalid and songvalid:
-            artist = artist_form.save()
-
-            image = image_form.save(commit=False)
-            image_file = request.POST['image_file']
-            image.file = image_file
-            image.save()
-
-            song = song_form.save(commit=False)
-            song.image = image
-            song.save()
-
-            clip = clip_form.save(commit=False)
-            clip.song = song
-            clip.save()
-            return render(request, self.success_template, context)
-
-
+        form = SingleReleaseForm(request.POST)
+        if form.is_valid():
+            song_name = form.cleaned_data['song_name']
+            song_id_type = form.cleaned_data['song_id_type']
+            song_id = form.cleaned_data['song_id']
+            territory = form.cleaned_data['territory']
+            artist_name = form.cleaned_data['artist_name']
+            artist_role = form.cleaned_data['artist_role']
+            pline_year = form.cleaned_data['pline_year']
+            pline_text = form.cleaned_data['pline_text']
+            cline_year = form.cleaned_data['cline_year']
+            cline_text = form.cleaned_data['cline_text']
+            genre = form.cleaned_data['genre']
+            record_label_name = form.cleaned_data['record_label_name']
+            codec = form.cleaned_data['codec']
+            bitrate = form.cleaned_data['bitrate']
+            channels = form.cleaned_data['channels']
+            sampling = form.cleaned_data['sampling']
+            duration = form.cleaned_data['duration']
+            uri = form.cleaned_data['uri']
+            hash_algorithm = form.cleaned_data['hash_algorithm']
+            hash_value = form.cleaned_data['hash_value']
+            parental_warning = form.cleaned_data['parental_warning']
+            image_id = form.cleaned_data['image_id']
+            image_id_type = form.cleaned_data['image_id_type']
+            image_type = form.cleaned_data['image_type']
 
 
 
 class DashboardView(LoginRequiredMixin, TemplateView):
-    '''
+    """
     Dashboard view for client. Will be able to access it once the client logs in and is authenticated and authorized.
-    '''
+    """
     template_name = "client/plan-page.html"
 
     def get(self, request):
-        '''Handles GET method'''
+        """Handles GET method"""
         context = {
-                'user': request.user,
-                }
+            'user': request.user,
+        }
         return render(request, self.template_name, context=context)

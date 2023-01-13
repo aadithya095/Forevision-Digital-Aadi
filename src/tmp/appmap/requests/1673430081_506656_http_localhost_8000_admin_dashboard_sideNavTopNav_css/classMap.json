@@ -1,0 +1,24 @@
+[
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /admin/dashboard/sideNavTopNav.css"
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "name": "<templates>/UnknownSource",
+    "children": [
+      {
+        "type": "function",
+        "name": "render",
+        "static": false,
+        "location": ""
+      }
+    ]
+  }
+]

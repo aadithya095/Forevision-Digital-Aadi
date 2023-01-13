@@ -1,0 +1,8 @@
+[
+  "BEGIN",
+  "INSERT INTO \"django_session\" (\"session_key\", \"session_data\", \"expire_date\") VALUES (?, ?, ?)",
+  "SELECT ? AS \"a\" FROM \"django_session\" WHERE \"django_session\".\"session_key\" = ? LIMIT ?",
+  "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = ? LIMIT ?",
+  "UPDATE \"auth_user\" SET \"last_login\" = ? WHERE \"auth_user\".\"id\" = ?",
+  "UPDATE \"django_session\" SET \"session_data\" = ?, \"expire_date\" = ? WHERE \"django_session\".\"session_key\" = ?"
+]
