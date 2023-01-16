@@ -144,7 +144,7 @@ if __name__ == "__main__":
         channels='2',
         sampling='44.1',
         duration='PT0H3M20S',
-        uri='resources/test.mp3',
+        uri='resources/tests.mp3',
         hash_algorithm='md5',
         hash_value='dad345add3324ewa4',
         resource_id='1',

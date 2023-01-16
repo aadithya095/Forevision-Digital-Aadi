@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "HTTP server requests->GET /admin/dashboard/content.css",
-    "callee": "<templates>/UnknownSource#render"
-  }
-]

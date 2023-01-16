@@ -155,6 +155,7 @@ class SoundRecordingEdition:
         tag = et.Element(Tags.sound_recording_edition.value)
         tag.append(self.build_resource_id())
         tag.append(self.build_pline())
+        tag.append(self.technical_details.write())
         return tag
 
 
@@ -178,7 +179,7 @@ class TechnicalDetails:
         self.channels = channels
         self.sampling = sampling
         self.duration = duration
-        self.uri = uri,
+        self.uri = uri
         self.hash_algorithm = hash_algorithm
         self.hash_value = hash_value
 
@@ -189,11 +190,12 @@ class TechnicalDetails:
         tag = et.Element(Tags.file.value)
         add_subelement_with_text(tag, Tags.uri.value, self.uri)
         tag.append(self.build_hashsum())
+        return tag
 
     def build_hashsum(self):
         tag = et.Element(Tags.hashsum.value)
         add_subelement_with_text(tag, Tags.algo.value, self.hash_algorithm)
-        add_subelement_with_text(tag, Tags.hashsum_value, self.hash_value)
+        add_subelement_with_text(tag, Tags.hashsum_value.value, self.hash_value)
         return tag
 
     def build_delivery_file(self):
@@ -202,13 +204,14 @@ class TechnicalDetails:
         add_subelement_with_text(tag, Tags.codec_type.value, self.codec)  # AudioCodecType
         add_subelement_with_text(tag, Tags.bitrate.value, self.bitrate)  # BitRate
         add_subelement_with_text(tag, Tags.channels.value, self.channels)  # NumberOfChannels
-        add_subelement_with_text(tag, Tags.sampling_rate, self.sampling)  # SamplingRate
-        add_subelement_with_text(tag, Tags.duration, self.duration)  # Duration
+        add_subelement_with_text(tag, Tags.sampling_rate.value, self.sampling)  # SamplingRate
+        add_subelement_with_text(tag, Tags.duration.value, self.duration)  # Duration
         tag.append(self.build_file())
+        return tag
 
     def write(self):
         tag = et.Element(Tags.technical_details.value)
-        add_subelement_with_text(tag, Tags.tech_resource_ref, self.reference)
+        add_subelement_with_text(tag, Tags.tech_resource_ref.value, self.get_reference())
         tag.append(self.build_delivery_file())
         return tag
 

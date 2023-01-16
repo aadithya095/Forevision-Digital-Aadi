@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='song',
             name='name',
-            field=models.CharField(default='test', max_length=100),
+            field=models.CharField(default='tests', max_length=100),
             preserve_default=False,
         ),
     ]

@@ -230,4 +230,4 @@ if __name__ == "__main__":
     )
 
     root = builder.build()
-    save(root, 'ddex.xml')
+    save(root, 'ddex-demo.xml')

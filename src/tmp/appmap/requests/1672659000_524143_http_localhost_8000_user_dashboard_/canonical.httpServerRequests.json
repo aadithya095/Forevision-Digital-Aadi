@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /user/dashboard/",
-    "parameters": "()",
-    "status": 302
-  }
-]

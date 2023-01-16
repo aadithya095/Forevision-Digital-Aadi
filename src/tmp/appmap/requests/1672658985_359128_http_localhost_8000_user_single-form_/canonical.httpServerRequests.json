@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /user/single-form/",
-    "parameters": "()",
-    "status": 302
-  }
-]

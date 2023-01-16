@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "HTTP server requests->GET /user/",
-    "callee": "<templates>/UnknownSource#render"
-  }
-]

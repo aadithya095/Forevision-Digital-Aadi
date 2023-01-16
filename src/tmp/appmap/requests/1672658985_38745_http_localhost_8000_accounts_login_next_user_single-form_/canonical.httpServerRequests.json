@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /accounts/login/",
-    "parameters": "(next)",
-    "status": 404
-  }
-]

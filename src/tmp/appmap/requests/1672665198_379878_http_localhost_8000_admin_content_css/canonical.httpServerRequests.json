@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /admin/content.css",
-    "parameters": "()",
-    "status": 404
-  }
-]
