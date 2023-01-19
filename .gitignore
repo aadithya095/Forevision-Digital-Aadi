@@ -8,3 +8,5 @@ virtualEnv/*
 src/.idea/*
 .idea/*
 .vscode/*
+__pycache__/*
+appmap.yml
