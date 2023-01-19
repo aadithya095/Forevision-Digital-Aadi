@@ -16,7 +16,7 @@ All required tags or parts of ResourceList such as SoundRecording, SoundRecordin
 
 from enum import Enum
 from lxml import etree as et
-from src.ddex.utils import add_subelement_with_text
+from utils import add_subelement_with_text
 
 
 class Tags(Enum):
@@ -26,10 +26,10 @@ class Tags(Enum):
     type = "Type"
     sound_recording_edition = "SoundRecordingEdition"
     resource_id = "ResourceId"
-    pline = "Pline"
+    pline = "PLine"
     pline_year = "Year"
     pline_company = "PlineCompany"
-    pline_text = "PlineText"
+    pline_text = "PLineText"
     technical_details = "TechnicalDetails"
     tech_resource_ref = "TechnicalResourceDetailsReference"
     delivery_file = "DeliveryFile"

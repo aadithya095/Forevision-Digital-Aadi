@@ -17,7 +17,7 @@ Builds Party part of the DDEX for new release single.
 
 from lxml import etree as et
 from enum import Enum
-from src.ddex.utils import add_subelement_with_text
+from utils import add_subelement_with_text
 
 
 class Tags(Enum):

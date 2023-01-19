@@ -14,7 +14,7 @@ Documentation
 
 Builds ResourceList part of the DDEX for new release single.
 """
-from src.ddex.resource import (
+from resource import (
     ResourceList,
     SoundRecordingType,
     SoundRecording,

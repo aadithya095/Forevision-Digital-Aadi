@@ -1,4 +1,4 @@
-from src.ddex.release import Release, RelatedRelease, ResourceGroup, ReleaseIdType, ReleaseList
+from release import Release, RelatedRelease, ResourceGroup, ReleaseIdType, ReleaseList
 
 
 class ReleaseBuilder:

@@ -1,8 +1,8 @@
-from src.ddex.messageheader import MessageHeader, MessageParty, MessageControlType, MessagePartyType
-from src.ddex.party import Party, PartyList, Contributor
-from src.ddex.release_builder import ReleaseBuilder
-from src.ddex.resource_builder import ResourceBuilder
-from src.ddex.utils import save
+from messageheader import MessageHeader, MessageParty, MessageControlType, MessagePartyType
+from party import Party, PartyList, Contributor
+from release_builder import ReleaseBuilder
+from resource_builder import ResourceBuilder
+from utils import save
 
 from lxml import etree as et
 

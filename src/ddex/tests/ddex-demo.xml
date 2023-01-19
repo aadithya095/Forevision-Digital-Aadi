@@ -1,7 +1,9 @@
-<ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/43" xmlns:xsi="http://w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ddex.net/xml/ern/43 http://ddex.net/xml/ern/43/release-notification.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/43" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ddex.net/xml/ern/43 http://ddex.net/xml/ern/43/release-notification.xsd"
+ReleaseProfileVariantVersionId="SimpleAudioSingle" LanguageAndScriptCode="en" AvsVersionId="3">
   <MessageHeader>
-    <MessageThreadId>ce8cf35e-99af-4eb8-a915-a63a03d9e9e8</MessageThreadId>
-    <MessageId>25525e50-1d02-40a1-80d1-7f13abe03e1f</MessageId>
+    <MessageThreadId>88bd5c2d-9b7a-4e23-9231-44b1134c0777</MessageThreadId>
+    <MessageId>ac7cd92d-2082-4ec6-9020-586ab7044001</MessageId>
     <MessageSender>
       <PartyId>PADPIDA2015010310U</PartyId>
       <PartyName>
@@ -14,7 +16,7 @@
         <FullName>Universal Studios</FullName>
       </PartyName>
     </MessageRecipient>
-    <MessageCreateDateTime>2023-01-16 12:54:16.188420</MessageCreateDateTime>
+    <MessageCreatedDateTime>2023-01-20 00:44:35.817583</MessageCreatedDateTime>
     <MessageControlType>LiveMessage</MessageControlType>
   </MessageHeader>
   <PartyList/>
@@ -26,11 +28,10 @@
         <ResourceId>
           <ISRC>RINF232100008</ISRC>
         </ResourceId>
-        <Pline>
+        <PLine>
           <Year>2022</Year>
-          <PlineCompany/>
-          <PlineText>Subrata kr Dutta</PlineText>
-        </Pline>
+          <PLineText>Subrata kr Dutta</PLineText>
+        </PLine>
         <TechnicalDetails>
           <TechnicalResourceDetailsReference>TINF232100008</TechnicalResourceDetailsReference>
           <DeliveryFile>
@@ -56,7 +57,7 @@
       <ResourceReference>RINF232100008IMG</ResourceReference>
       <Type>FrontCoverImage</Type>
       <ResourceId>
-        <ISRC>INF232100008IMG</ISRC>
+        <ProprietaryId Namespace="PADPIDA2015010310U">XXX:123456789</ProprietaryId>
       </ResourceId>
     </Image>
   </ResourceList>
@@ -65,7 +66,7 @@
       <ReleaseReference>RINF232100008</ReleaseReference>
       <ReleaseType>ProprietaryId</ReleaseType>
       <ReleaseId>
-        <ProprietaryId>INF232100008</ProprietaryId>
+        <ProprietaryId Namespace="PADPIDA2015010310U">INF232100008</ProprietaryId>
       </ReleaseId>
       <DisplayTitleText>Chillo Je Tar</DisplayTitleText>
       <DisplayTitle>
@@ -77,11 +78,11 @@
         <DisplayArtistRole>MainArtist</DisplayArtistRole>
       </DisplayArtist>
       <ReleaseLabelReference>PBig Machine Records</ReleaseLabelReference>
-      <Cline>
+      <CLine>
         <Year>2022</Year>
-        <ClineCompany/>
-        <ClineText>Big Machine Records</ClineText>
-      </Cline>
+        <CLineCompany/>
+        <CLineText>Big Machine Records</CLineText>
+      </CLine>
       <Genre>
         <GenreText>mellow</GenreText>
       </Genre>
@@ -89,17 +90,31 @@
       <RelatedRelease>
         <ReleaseRelationshipType>LinkedRelease</ReleaseRelationshipType>
         <ReleaseId>
-          <ProprietaryId>INF232100008</ProprietaryId>
+          <ProprietaryId Namespace="PADPIDA2015010310U">INF232100008</ProprietaryId>
         </ReleaseId>
       </RelatedRelease>
       <ResourceGroup>
         <SequenceNumber>1</SequenceNumber>
-        <ResourceGroupContenttItem>
+        <ResourceGroupContentItem>
           <SequenceNumber>1</SequenceNumber>
           <ReleaseResourceReference>RINF232100008</ReleaseResourceReference>
           <LinkedReleaseResourceReference>RINF232100008</LinkedReleaseResourceReference>
-        </ResourceGroupContenttItem>
+        </ResourceGroupContentItem>
       </ResourceGroup>
     </Release>
   </ReleaseList>
+  <DealList>
+    <ReleaseDeal>
+      <DealReleaseReference>R0</DealReleaseReference>
+      <Deal>
+        <DealTerms>
+          <ValidityPeriod>
+            <StartDate>2022-10-20</StartDate>
+          </ValidityPeriod>
+          <CommercialModelType>PayAsYouGoModel</CommercialModelType>
+          <UseType>PermanentDownload</UseType>
+        </DealTerms>
+      </Deal>
+    </ReleaseDeal>
+  </DealList>
 </ern:NewReleaseMessage>

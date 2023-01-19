@@ -8,9 +8,9 @@ TODO
 """
 import os
 from lxml import etree as et
-from config import ROOT_DIR
 
-
+ROOT_DIR = os.path.realpath(os.path.join(__file__, '..', '..', '..'))
+print(ROOT_DIR)
 RELEASE_NOTIFICATION_SCHEMA = 'docs/assets/ern/release-notification.xsd'
 
 
@@ -36,4 +36,3 @@ def validate(xml_file):
     schema_doc = et.parse(schema_file)
     schema = et.XMLSchema(schema_doc)
     return schema.validate(xml)
-
