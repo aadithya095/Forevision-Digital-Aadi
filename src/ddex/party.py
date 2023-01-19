@@ -7,6 +7,7 @@ TODO
 - No tests are written
 - Removing redundant reference argument and automatically assigning the reference
 - Need to write proper documentation
+- Refactor code to properly make xml file
 
 --------------
 Documentation
@@ -16,7 +17,7 @@ Builds Party part of the DDEX for new release single.
 
 from lxml import etree as et
 from enum import Enum
-from utils import add_subelement_with_text
+from src.ddex.utils import add_subelement_with_text
 
 
 class Tags(Enum):

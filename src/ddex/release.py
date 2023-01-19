@@ -7,12 +7,12 @@ TODO
 - Test to be written
 - Removing redundant reference functions to automatically create one instead of manual insertions
 - Require to proper documentation
+- Refactor code to properly make xml file
 """
 from lxml import etree as et
 from enum import Enum
-from utils import add_subelement_with_text
-from resource import SoundRecording
-
+from src.ddex.utils import add_subelement_with_text
+from src.ddex.resource import SoundRecording
 
 
 class ReleaseIdType(Enum):
@@ -68,6 +68,7 @@ class ReleaseList:
 
 class Release:
     """Class to create Release"""
+
     def __init__(self,
                  reference,
                  id_,
@@ -114,7 +115,7 @@ class Release:
         add_subelement_with_text(tag, Tags.title_text.value, self.title_text)
         return tag
 
-    def build_additional_title(self):
+   def build_additional_title(self):
         tag = et.Element(Tags.additional_title.value)
         add_subelement_with_text(tag, Tags.title_text.value, self.additional_title)
         return tag
@@ -221,4 +222,3 @@ class ResourceGroup:
         add_subelement_with_text(tag, Tags.sequence_number.value, self.sequence_number)
         tag.append(self.build_resource_group_items())
         return tag
-

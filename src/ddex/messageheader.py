@@ -2,7 +2,7 @@ from lxml import etree as et
 from datetime import datetime
 from enum import Enum
 from uuid import uuid4 as uuid
-from utils import add_subelement_with_text
+from src.ddex.utils import add_subelement_with_text
 
 
 class Tags(Enum):

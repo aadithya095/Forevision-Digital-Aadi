@@ -16,7 +16,7 @@ All required tags or parts of ResourceList such as SoundRecording, SoundRecordin
 
 from enum import Enum
 from lxml import etree as et
-from utils import add_subelement_with_text
+from src.ddex.utils import add_subelement_with_text
 
 
 class Tags(Enum):
