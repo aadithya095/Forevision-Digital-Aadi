@@ -185,32 +185,51 @@ if __name__ == "__main__":
     from config import ROOT_DIR
     test_file_name = os.path.join(ROOT_DIR, 'docs/assets/resources/test_file.wav')
     p1 = Party(
-            name='Subrata Kr Dutta',
+            name='Tanmay Jyoti Pathak',
             role="MainArtist"
             )
+    p2 = Party(
+            name='Banjit Pathak',
+            role='Lyricist'
+            )
+    p3 = Party(
+            name="Amit Soukadhara",
+            role="Composer"
+            )
+
+    c1 = Contributor(
+            id_="PBanjitPathak",
+            role="Lyricist"
+            )
+    c2 = Contributor(
+            id_="PAmitSoukadhara",
+            role="Composer"
+            )
+
     builder = DdexBuilder(
-        song_name="Chillo Je Tar",
+        song_name="Akash Nila Nila Sopun",
         song_id_type='ISRC',
-        song_id='INF232100008',
+        song_id='INF232200812',
         territory='Worldwide',
-        artist_name='Subrata kr Dutta',
+        artist_name='Tanmay Jyoti Pathak',
         artist_role='MainArtist',
-        pline_year='2022',
-        pline_text='Subrata kr Dutta',
-        cline_year='2022',
-        cline_text='Big Machine Records',
-        genre='mellow',
-        record_label_name='Big Machine Records',
+        pline_text='Amit Soukadhara',
+        cline_text='HRIDOI',
+        genre='Regional',
+        record_label_name='HRIDOI',
         uri=test_file_name,
         parental_warning='NotExplicit',
-        image_id='INF232100008IMG',
+        image_id='INF232200812IMG',
         image_type='FrontCoverImage',
         sender_name='Forevision Digital',
         sender_dpid='PADPIDA2015010310U',
         receiver_name='Universal Studios',
         receiver_dpid='PADPIDA201508920U',
-        parties=[p1]
+        parties=[p1, p2, p3],
+        contributors=[c1, c2],
     )
 
     root = builder.build()
-    save(root, 'test_1_build_root.xml')
+    filename = "testing_jaxta.xml"
+    save(root, filename)
+    print(f'Saved {filename}!')

@@ -132,7 +132,8 @@ class Release:
 
     def build_cline(self):
         tag = et.Element(Tags.cline.value)
-        add_subelement_with_text(tag, Tags.cline_year.value, self.cline_year)
+        if self.cline_year:
+            add_subelement_with_text(tag, Tags.cline_year.value, self.cline_year)
         add_subelement_with_text(tag, Tags.cline_company.value, self.cline_company)
         add_subelement_with_text(tag, Tags.cline_text.value, self.cline_text)
         return tag

@@ -148,13 +148,14 @@ class SoundRecording:
         tag.append(self.build_display_title())
         add_subelement_with_text(tag, Tags.display_artist_name.value, self.artist_name)
         tag.append(self.build_display_artist())
-        add_subelement_with_text(tag, Tags.duration.value, self.duration)
-        add_subelement_with_text(tag, Tags.parental_warning.value, self.parental_warning)
+
         #  This builds Contributor section
         #  Though I find it unclear on a proper implementation of
         #  the contributor section
         for i, contributor in enumerate(self.contributors):
             tag.append(contributor.write(SequenceNumber=str(i)))
+        add_subelement_with_text(tag, Tags.duration.value, self.duration)
+        add_subelement_with_text(tag, Tags.parental_warning.value, self.parental_warning)
         return tag
 
 
