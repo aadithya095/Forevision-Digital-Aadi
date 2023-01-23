@@ -6,31 +6,40 @@
       <ResourceId>
         <ISRC>1</ISRC>
       </ResourceId>
-      <Pline>
+      <PLine>
         <Year>2023</Year>
-        <PlineCompany>ForevisionDigital</PlineCompany>
-        <PlineText>Belongs to Forevision Digital</PlineText>
-      </Pline>
+        <PLineText>Belongs to Forevision Digital</PLineText>
+        <PLineCompany>ForevisionDigital</PLineCompany>
+      </PLine>
       <TechnicalDetails>
         <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
         <DeliveryFile>
-          <Type>AudioFile</Type>
-          <AudioCodecType>Mp3</AudioCodecType>
-          <BitRate>16</BitRate>
+          <Type>Audio</Type>
+          <AudioCodecType>UserDefined</AudioCodecType>
+          <BitRate>2304.0</BitRate>
           <NumberOfChannels>2</NumberOfChannels>
-          <SamplingRate>44.1</SamplingRate>
-          <Duration>PT0H3M20S</Duration>
+          <SamplingRate>48.0</SamplingRate>
+          <Duration>PT3M52S</Duration>
           <File>
-            <URI>resources/tests.mp3</URI>
+            <URI>resources/test_file.wav</URI>
             <HashSum>
-              <Algorithm>md5</Algorithm>
-              <HashSumValue>dad345add3324ewa4</HashSumValue>
+              <Algorithm>MD5</Algorithm>
+              <HashSumValue>7bada59084a5347c40287dbd598562c877289be7</HashSumValue>
             </HashSum>
           </File>
         </DeliveryFile>
       </TechnicalDetails>
     </SoundRecordingEdition>
-    <DisplayTitleText>Tumi Din Dhale</DisplayTitleText>
+    <DisplayTitleText>Subrata Kr Dutta: Tumi Din Dhale</DisplayTitleText>
+    <DisplayTitle>
+      <TitleText>Tumi Din Dhale</TitleText>
+    </DisplayTitle>
+    <DisplayArtistName>Subrata Kr Dutta</DisplayArtistName>
+    <DisplayArtist>
+      <ArtistPartyReference>P1</ArtistPartyReference>
+      <DislplayArtistRole>MainArtist</DislplayArtistRole>
+    </DisplayArtist>
+    <Duration/>
     <Contributor SequenceNumber="0">
       <ContributorPartyReference>1</ContributorPartyReference>
       <Role>Orchestra</Role>
