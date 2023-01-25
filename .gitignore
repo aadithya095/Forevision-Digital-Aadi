@@ -11,3 +11,5 @@ src/.idea/*
 __pycache__/*
 appmap.yml
 ./docs/assets/resources/*
+*/tmp/*
+src/resource/*
