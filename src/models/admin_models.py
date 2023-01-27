@@ -3,7 +3,9 @@ from .tags import PlanSet
 from ddex.config import ReleaseTypeSet
 
 PLAN_CHOICES = [(plan.value, plan.value) for plan in PlanSet]
-RELEASE_TYPE_CHOICE = [(release_option, release_option) for release_option in ReleaseTypeSet]
+RELEASE_TYPE_CHOICE = [(
+    release_option, 
+    release_option) for release_option in ReleaseTypeSet]
 
 class Order(models.Model):
     """

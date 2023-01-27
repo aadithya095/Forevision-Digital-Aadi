@@ -21,7 +21,6 @@ ID_TYPE_CHOICES = [(id_type.value, id_type.value) for id_type in IdTypeSet] # Cr
 PARTY_ROLE_CHOICES = [(role.value, role.value) for role in PartyRoleSet] # Creates choices for party roles
 
 
-
 class Party(models.Model):
     """
     Stores data for PartyList tag in DDEX xml
@@ -36,12 +35,14 @@ class Party(models.Model):
     party_type = models.CharField(choices=TYPE_CHOICES, max_length=250, default=PartyTypeSet.artist.value) # Determines the type of Party i.e. either Artist or Contributor
     role = models.CharField(choices=PARTY_ROLE_CHOICES, max_length=150, default=PartyRoleSet.main_artist.value) # Need to add choices
     name = models.CharField(max_length=250) # Full name of the party
+    order = models.ManyToManyField(Order)
 
     def get_reference(self, name, record_label):
         return f"P{self.name}_{name}_{record_label}"
 
     def __str__(self):
         return f"{self.party_type}: {self.name}"
+
 
 class Album(models.Model):
     id_type = models.CharField(choices=ID_TYPE_CHOICES, max_length=100, default=IdTypeSet.icpn.value)
@@ -53,7 +54,6 @@ class Album(models.Model):
 
     def __str__(self):
         return f"Album: {self.name}-{self.id_value}"
-
 
 
 class Song(models.Model):
