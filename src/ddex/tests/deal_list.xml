@@ -1,0 +1,12 @@
+<DealList>
+  <ReleaseDeal>
+    <DealReleaseReference>R1</DealReleaseReference>
+    <Deal>
+      <DealList>
+        <ValidityPeriod>
+          <StartDate>2022-01-06</StartDate>
+        </ValidityPeriod>
+      </DealList>
+    </Deal>
+  </ReleaseDeal>
+</DealList>

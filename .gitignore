@@ -13,3 +13,4 @@ appmap.yml
 ./docs/assets/resources/*
 */tmp/*
 src/resource/*
+./.idea/

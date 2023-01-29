@@ -20,6 +20,11 @@ from .forms import (
         SongForm,
         )
 
+"""
+TODO:
+    - Refactor view class to have appropriate Views such as FormViews
+"""
+
 class LandingPage(TemplateView):
     """
     View for landing page that will be shown to the users when they visit 

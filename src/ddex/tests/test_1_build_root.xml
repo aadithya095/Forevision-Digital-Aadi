@@ -1,7 +1,7 @@
 <ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/43" xmlns:xsi="http://w3.org/2001/XMLSchema-instance" ReleaseProfileVariantVersionId="Classical" LanguageAndScriptCode="en" AvsVersionId="3">
   <MessageHeader>
-    <MessageThreadId>a20bc47b-dd61-4c73-8035-6a1375c69502</MessageThreadId>
-    <MessageId>1e194e77-a4d2-4015-b9ff-9f002ecb7809</MessageId>
+    <MessageThreadId>d52b3a7f-5271-46a3-b3a1-b7b86f2826bf</MessageThreadId>
+    <MessageId>afb44de3-d651-4471-93d7-4c88c509350e</MessageId>
     <MessageSender>
       <PartyId>PADPIDA2015010310U</PartyId>
       <PartyName>
@@ -14,7 +14,7 @@
         <FullName>Universal Studios</FullName>
       </PartyName>
     </MessageRecipient>
-    <MessageCreatedDateTime>2023-01-24T02:14:47</MessageCreatedDateTime>
+    <MessageCreatedDateTime>2023-01-24T01:24:58</MessageCreatedDateTime>
     <MessageControlType>LiveMessage</MessageControlType>
   </MessageHeader>
   <PartyList>
@@ -103,18 +103,18 @@
       </Genre>
       <ParentalWarningType>Unknown</ParentalWarningType>
       <RelatedRelease>
-        <ReleaseRelationshipType>Unknown</ReleaseRelationshipType>
+        <ReleaseRelationshipType>LinkedRelease</ReleaseRelationshipType>
         <ReleaseId>
-          <ICPN>INF232100008</ICPN>
+          <ProprietaryId>INF232100008</ProprietaryId>
         </ReleaseId>
       </RelatedRelease>
       <ResourceGroup>
         <SequenceNumber>1</SequenceNumber>
-        <ResourceGroupContentItem>
+        <ResourceGroupContenttItem>
           <SequenceNumber>1</SequenceNumber>
           <ReleaseResourceReference>AINF232100008</ReleaseResourceReference>
-          <LinkedReleaseResourceReference>AINF232100008</LinkedReleaseResourceReference>
-        </ResourceGroupContentItem>
+          <LinkedReleaseResourceReference>RINF232100008</LinkedReleaseResourceReference>
+        </ResourceGroupContenttItem>
       </ResourceGroup>
     </Release>
   </ReleaseList>

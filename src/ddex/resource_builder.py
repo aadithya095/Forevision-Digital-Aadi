@@ -19,7 +19,8 @@ from resource import (
     SoundRecordingType,
     SoundRecording,
     Image,
-    SoundRecordingEdition
+    SoundRecordingEdition,
+    Tags,
 )
 from technical_details import TechnicalDetails
 
@@ -47,8 +48,10 @@ class ResourceBuilder:
     contributors: the list of contributors, this cannot be none and must be provided.
     """
     def __init__(self,
-                 technical_detail_type,
-                 filename,
+                 audio_technical_detail_type,
+                 image_technical_details_type,
+                 audio_filename,
+                 image_filename,
                  resource_id,
                  pline_text,
                  sound_recording_reference,
@@ -56,16 +59,17 @@ class ResourceBuilder:
                  artist_name,
                  artist_role,
                  parental_warning,
+                 id_type,
                  image_reference,
                  image_type,
-                 image_id,
                  party_id,
                  type_=SoundRecordingType.musical_work_sound_recording.value,
                  pline_company=None,
                  pline_year=None,
                  contributors=[]):
-        self.td_type = technical_detail_type
-        self.filename = filename
+        self.audio_td_type = audio_technical_detail_type
+        self.image_td_type = image_technical_details_type
+        self.audio_filename = audio_filename
         self.resource_id = resource_id
         self.pline_text = pline_text
         self.pline_company = pline_company # None Attribute
@@ -78,22 +82,29 @@ class ResourceBuilder:
         self.type = type_
         self.image_reference = image_reference
         self.image_type = image_type
-        self.image_id = image_id
+        self.image_filename = image_filename
+        self.id_type = id_type
         self.party_id = party_id
         self.contributors = contributors
 
     def build(self):
-        technical_detail_tag = TechnicalDetails(
+        audio_technical_detail_tag = TechnicalDetails(
             id_=self.resource_id,
-            type=self.td_type,
-            file=self.filename,
+            type=self.audio_td_type,
+            file=self.audio_filename,
         )
-        print(technical_detail_tag.build_duration())
+
+        image_technical_detail_tag = TechnicalDetails(
+                id_= self.resource_id,
+                type=self.image_td_type,
+                file=self.image_filename,
+                )
 
         sound_recording_edition_tag = SoundRecordingEdition(
             resource_id=self.resource_id,
             pline_company=self.pline_company,
-            technical_details=technical_detail_tag,
+            technical_details=audio_technical_detail_tag,
+            id_type=self.id_type,
             pline_text=self.pline_text,
             pline_year=self.pline_year,
         )
@@ -104,21 +115,25 @@ class ResourceBuilder:
             title_text=self.title_text,
             artist_name=self.artist_name,
             artist_role=self.artist_role,
-            duration=technical_detail_tag.build_duration(),
+            duration=audio_technical_detail_tag.build_duration(),
             parental_warning=self.parental_warning,
             contributors=self.contributors,
             type_=self.type
         )
+
         image_tag = Image(
             reference=self.image_reference,
             type_=self.image_type,
-            id_=self.image_id,
+            # Image id is redundant
+            id_=self.resource_id,
             party_id=self.party_id,
+            technical_details=image_technical_detail_tag,
         )
         resource_list_tag = ResourceList(
             sound_recording=sound_recording_tag,
             image=image_tag
         )
+
         root = resource_list_tag.write()
         return root
 
@@ -134,27 +149,29 @@ if __name__ == "__main__":
     from config import ROOT_DIR
 
     test_file_name = os.path.join(ROOT_DIR, 'docs/assets/resources/test_file.wav')
+    image_file_name = os.path.join(ROOT_DIR, 'docs/assets/resources/INF232200812IMG.jpg')
 
     c1 = Contributor('1', 'Orchestra')
     c2 = Contributor('2', 'Vocals')
     c3 = Contributor('3', 'Guitar')
 
     builder = ResourceBuilder(
-        technical_detail_type='Audio',
+        audio_technical_detail_type='AudioType',
+        image_technical_details_type="ImageType",
         resource_id='1',
-        filename=test_file_name,
+        audio_filename=test_file_name,
         pline_company='ForevisionDigital',
         pline_year='2023',
         pline_text='Belongs to Forevision Digital',
         sound_recording_reference='A1',
         title_text='Tumi Din Dhale',
         artist_name="Subrata Kr Dutta",
-        artist_reference='P1',
         artist_role='MainArtist',
         parental_warning='NoExplicit',
         image_reference='R1',
+        image_filename=image_file_name,
         image_type='FrontCoverImage',
-        image_id='PAPI1034003',
+        party_id="PAPI10393002",
         contributors=[c1, c2, c3]
     )
     root = builder.build()

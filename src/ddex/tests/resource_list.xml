@@ -14,19 +14,7 @@
       <TechnicalDetails>
         <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
         <DeliveryFile>
-          <Type>Audio</Type>
-          <AudioCodecType>UserDefined</AudioCodecType>
-          <BitRate>2304.0</BitRate>
-          <NumberOfChannels>2</NumberOfChannels>
-          <SamplingRate>48.0</SamplingRate>
-          <Duration>PT3M52S</Duration>
-          <File>
-            <URI>resources/test_file.wav</URI>
-            <HashSum>
-              <Algorithm>MD5</Algorithm>
-              <HashSumValue>7bada59084a5347c40287dbd598562c877289be7</HashSumValue>
-            </HashSum>
-          </File>
+          <Type>AudioType</Type>
         </DeliveryFile>
       </TechnicalDetails>
     </SoundRecordingEdition>
@@ -36,10 +24,9 @@
     </DisplayTitle>
     <DisplayArtistName>Subrata Kr Dutta</DisplayArtistName>
     <DisplayArtist>
-      <ArtistPartyReference>P1</ArtistPartyReference>
-      <DislplayArtistRole>MainArtist</DislplayArtistRole>
+      <ArtistPartyReference>PSubrataKrDutta</ArtistPartyReference>
+      <DisplayArtistRole>MainArtist</DisplayArtistRole>
     </DisplayArtist>
-    <Duration/>
     <Contributor SequenceNumber="0">
       <ContributorPartyReference>1</ContributorPartyReference>
       <Role>Orchestra</Role>
@@ -52,12 +39,20 @@
       <ContributorPartyReference>3</ContributorPartyReference>
       <Role>Guitar</Role>
     </Contributor>
+    <Duration/>
+    <ParentalWarningType>NoExplicit</ParentalWarningType>
   </SoundRecording>
   <Image>
     <ResourceReference>R1</ResourceReference>
     <Type>FrontCoverImage</Type>
     <ResourceId>
-      <ProprietaryId>PAPI1034003</ProprietaryId>
+      <ProprietaryId Namespace="PAPI10393002">T1IMG</ProprietaryId>
     </ResourceId>
+    <TechnicalDetails>
+      <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+      <DeliveryFile>
+        <Type>ImageType</Type>
+      </DeliveryFile>
+    </TechnicalDetails>
   </Image>
 </ResourceList>

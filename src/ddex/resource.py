@@ -19,6 +19,7 @@ from lxml import etree as et
 from utils import add_subelement_with_text, format_duration
 
 
+
 class Tags(Enum):
     resource_list = "ResourceList"
     sound_recording = "SoundRecording"
@@ -164,6 +165,7 @@ class SoundRecordingEdition:
                  resource_id,
                  pline_text,
                  technical_details,
+                 id_type,
                  pline_company=None,
                  pline_year=None,
                  ):
@@ -172,10 +174,11 @@ class SoundRecordingEdition:
         self.pline_text = pline_text
         self.pline_company = pline_company
         self.pline_year = pline_year
+        self.id_type = id_type
 
     def build_resource_id(self):
         tag = et.Element(Tags.resource_id.value)
-        add_subelement_with_text(tag, Tags.isrc.value, self.resource_id)
+        add_subelement_with_text(tag, self.id_type, self.resource_id)
         return tag
 
     def build_pline(self):
@@ -205,20 +208,32 @@ class SoundRecordingEdition:
 
 class Image:
     """
-    Image class is used to create the Image tag. It gets included inside ResourceList.
+    Image class is used to create the Image tag. It gets included inside 
+    ResourceList.
     """
-    def __init__(self, reference, type_, id_, party_id):
-        self.reference = reference  # a unique reference for the image resource over the whole document
+    def __init__(self, reference, type_, id_, party_id, technical_details):
+        self.reference = reference  # a unique reference for the image resource 
+        # over the whole document
         self.type = type_  # the type of the image resource
-        self.id = id_  # the identifier of the image resource, proprietary id is currently used.
-        self.party_id = party_id # party_id is used as a value for namespace in ProprietaryId
+        # the id of the image is resource_id 
+        # need to add [resource_id]IMG at the end
+        self.id = f"T{id_}IMG"
+        # is currently used.
+        self.party_id = party_id # party_id is used as a value for namespace in 
+        # ProprietaryId
+        self.technical_details = technical_details
 
     def build_resource_id(self):
         """
         This function builds resource id with proprietary id.
         """
         tag = et.Element(Tags.resource_id.value)
-        add_subelement_with_text(tag, Tags.proprietary_id.value, self.id, Namespace=self.party_id)
+        add_subelement_with_text(
+                tag, 
+                Tags.proprietary_id.value, 
+                self.id, 
+                Namespace=self.party_id
+                )
         return tag
 
     def write(self):
@@ -229,4 +244,5 @@ class Image:
         add_subelement_with_text(tag, Tags.reference.value, self.reference)
         add_subelement_with_text(tag, Tags.type_.value, self.type)
         tag.append(self.build_resource_id())
+        tag.append(self.technical_details.write())
         return tag

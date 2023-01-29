@@ -1,8 +1,11 @@
 from messageheader import MessageHeader, MessageParty, MessageControlType, MessagePartyType
+from technical_details import TechnicalDetailsType
 from party import Party, PartyList, Contributor
 from release_builder import ReleaseBuilder
 from resource_builder import ResourceBuilder
+from deallist import DealList
 from utils import save
+from resource import Tags
 
 from lxml import etree as et
 
@@ -11,9 +14,9 @@ class DdexBuilder:
     def __init__(
             self,
             song_name,
-            song_id_type,
             song_id,
             territory,
+            release_date, # used for start date in deal list
 
             artist_name,
             artist_role,
@@ -29,6 +32,7 @@ class DdexBuilder:
             parental_warning,
 
             image_id,
+            image_file,
             image_type,
 
             sender_name,
@@ -43,8 +47,11 @@ class DdexBuilder:
             pline_year=None,
             cline_year=None,
             sub_genre=None,
-            technical_detail_type='AudioFile', # The technical detail type can be Image, Video and Text. Audio is here the default value.
+            audio_technical_detail_type=TechnicalDetailsType.audio.value,
+            image_technical_detail_type=TechnicalDetailsType.image.value,
             release_type="Single",
+            song_id_type=Tags.isrc.value, # If no id type is provided
+            # by default it would be ISRC
 
             message_control_type=MessageControlType.live_message.value,
             parties=[],
@@ -53,6 +60,7 @@ class DdexBuilder:
         self.song_name = song_name
         self.song_id_type = song_id_type
         self.song_id = song_id
+        self.release_date = release_date
         self.display_title = display_title
         self.alternative_titles = alternative_titles
         self.territory = territory
@@ -70,7 +78,7 @@ class DdexBuilder:
 
         self.genre = genre
         self.subgenre = sub_genre
-        self.technical_detail_type = technical_detail_type
+        self.audio_technical_detail_type = audio_technical_detail_type
 
         self.release_type = release_type # ReleaseType the value by default is Unknown
 
@@ -80,7 +88,9 @@ class DdexBuilder:
         self.parental_warning = parental_warning
 
         self.image_id = image_id
+        self.image_file = image_file
         self.image_type = image_type
+        self.image_technical_detail_type = image_technical_detail_type
 
         self.sender_name = sender_name
         self.sender_dpid = sender_dpid
@@ -133,10 +143,12 @@ class DdexBuilder:
         party_list = PartyList(self.parties)
 
         resource_list = ResourceBuilder(
-            technical_detail_type=self.technical_detail_type,
-            filename=self.uri,
+            audio_technical_detail_type=self.audio_technical_detail_type,
+            image_technical_details_type=self.image_technical_detail_type,
+            audio_filename=self.uri,
+            image_filename=self.image_file,
             resource_id=self.song_id,
-            pline_company=self.pline_company,
+            pline_text=self.pline_text,
             sound_recording_reference=f"A{self.song_id}",
             artist_name=self.artist_name,
             title_text=self.song_name,
@@ -144,9 +156,8 @@ class DdexBuilder:
             parental_warning=self.parental_warning,
             image_reference=f"A{self.image_id}",
             image_type=self.image_type,
-            image_id=self.image_id,
             party_id=self.sender_dpid,
-            pline_text=self.pline_text,
+            id_type=self.song_id_type,
             pline_year=self.pline_year,
             contributors=self.contributors,
         )
@@ -172,11 +183,17 @@ class DdexBuilder:
             linked_resource_reference=f'A{self.song_id}' # LinkedResourceReference must have A as a prefix
         )
 
+        deal_list = DealList(
+                reference=f'R{self.song_id}',
+                start_date=self.release_date,
+                )
+
         root = self.build_root()
         root.append(message_header.write())
         root.append(party_list.write())
         root.append(resource_list.build())
         root.append(release_list.build())
+        root.append(deal_list.write())
         return root
 
 
@@ -184,9 +201,10 @@ if __name__ == "__main__":
     import os
     from config import ROOT_DIR
     test_file_name = os.path.join(ROOT_DIR, 'docs/assets/resources/test_file.wav')
+    image_file_name = os.path.join(ROOT_DIR, 'docs/assets/resources/INF232200812IMG.jpg')
     p1 = Party(
             name='Tanmay Jyoti Pathak',
-            role="MainArtist"
+            role="Singer"
             )
     p2 = Party(
             name='Banjit Pathak',
@@ -195,6 +213,10 @@ if __name__ == "__main__":
     p3 = Party(
             name="Amit Soukadhara",
             role="Composer"
+            )
+    p4 = Party(
+            name="Chafikhur Rahman",
+            role="Director"
             )
 
     c1 = Contributor(
@@ -205,11 +227,15 @@ if __name__ == "__main__":
             id_="PAmitSoukadhara",
             role="Composer"
             )
+    c3 = Contributor(
+            id_="PChafikhurRahman",
+            role="Director"
+            )
 
     builder = DdexBuilder(
         song_name="Akash Nila Nila Sopun",
-        song_id_type='ISRC',
-        song_id='INF232200812',
+        song_id='8905778280390',
+        release_date="2022-10-20",
         territory='Worldwide',
         artist_name='Tanmay Jyoti Pathak',
         artist_role='MainArtist',
@@ -221,15 +247,16 @@ if __name__ == "__main__":
         parental_warning='NotExplicit',
         image_id='INF232200812IMG',
         image_type='FrontCoverImage',
+        image_file=image_file_name,
         sender_name='Forevision Digital',
         sender_dpid='PADPIDA2015010310U',
-        receiver_name='Universal Studios',
-        receiver_dpid='PADPIDA201508920U',
-        parties=[p1, p2, p3],
-        contributors=[c1, c2],
+        receiver_name='Jaxsta',
+        receiver_dpid='PADPIDA2016091404E',
+        parties=[p1, p2, p3, p4],
+        contributors=[c1, c2, c3],
     )
 
     root = builder.build()
-    filename = "testing_jaxta.xml"
+    filename = "testing_image_file.xml"
     save(root, filename)
     print(f'Saved {filename}!')
