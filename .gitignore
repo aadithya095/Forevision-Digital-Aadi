@@ -14,3 +14,4 @@ appmap.yml
 */tmp/*
 src/resource/*
 ./.idea/
+src/ddex/resources/*
