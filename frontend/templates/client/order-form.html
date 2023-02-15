@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--This is the order form page-->
+<h1>Order Form</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_div }} <!--This is the form received from client/views.py-->
+    <input type="submit" value="Next to Party Form">
+</form>
+{% endblock content %}

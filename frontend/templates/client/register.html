@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    User Login Page
+{% endblock title %}
+
+{% block content %}
+    {% include 'includes/navbar.html' %}
+    <h1>User Login Page</h1>
+
+    <a href="{% url 'client:user_login' %}">Login</a>
+
+    {% include 'includes/footer.html' %}
+{% endblock content %}

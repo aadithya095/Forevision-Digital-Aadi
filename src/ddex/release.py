@@ -13,6 +13,8 @@ from lxml import etree as et
 from enum import Enum
 from utils import add_subelement_with_text
 from resource import SoundRecording
+from config import ReleaseTypeSet, ReleaseRelationshipTypeSet
+from exceptions import InvalidReleaseType, NoNamespaceError, InvalidReleaseRelationshipTypeSet
 
 
 class ReleaseIdType(Enum):
@@ -46,13 +48,13 @@ class Tags(Enum):
     release_relationship_type = "ReleaseRelationshipType"
     resource_group = "ResourceGroup"
     sequence_number = "SequenceNumber"
-    resource_group_content = "ResourceGroupContenttItem"
+    resource_group_content = "ResourceGroupContentItem"
     release_resource_reference = "ReleaseResourceReference"
     linked_release_resource_reference = "LinkedReleaseResourceReference"
-    cline = "Cline"
+    cline = "CLine"
     cline_year = "Year"
-    cline_company = "ClineCompany"
-    cline_text = "ClineText"
+    cline_company = "CLineCompany"
+    cline_text = "CLineText"
 
 
 class ReleaseList:
@@ -76,19 +78,21 @@ class Release:
                  title_text,
                  territory,
                  artist_name,
-                 artist_reference,
                  artist_role,
                  cline_year,
                  cline_company,
                  cline_text,
                  release_label_reference,
                  genre,
+                 release_type,
+                 release_id_type=ReleaseIdType.icpn.value, # default value is ICPN for every releases if provided otherwise
                  sub_genre=None,
                  additional_title=None,
                  parental_warning="Unknown",
-                 id_type=ReleaseIdType.proprietary_id.value,
                  related_release=[],
                  resource_group=[],
+                 *args,
+                 **namespaces,
                  ):
         self.reference = reference
         self.id = id_
@@ -96,7 +100,6 @@ class Release:
         self.title_text = title_text
         self.territory = territory
         self.artist_name = artist_name
-        self.artist_reference = artist_reference
         self.artist_role = artist_role
         self.cline_year = cline_year
         self.cline_company = cline_company
@@ -106,7 +109,14 @@ class Release:
         self.sub_genre = sub_genre
         self.additional_title = additional_title
         self.parental_warning = parental_warning
-        self.id_type = id_type
+
+        if release_type in ReleaseTypeSet: # Checks if release_type is in ReleaseTypeSet
+            self.release_type = release_type # If yes then assigns the value
+        else:
+            raise InvalidReleaseType(release_type) # If not then raises InvalidReleaseType Exception
+
+        self.release_id_type = release_id_type
+
         self.related_release = related_release
         self.resource_group = resource_group
 
@@ -122,7 +132,8 @@ class Release:
 
     def build_cline(self):
         tag = et.Element(Tags.cline.value)
-        add_subelement_with_text(tag, Tags.cline_year.value, self.cline_year)
+        if self.cline_year:
+            add_subelement_with_text(tag, Tags.cline_year.value, self.cline_year)
         add_subelement_with_text(tag, Tags.cline_company.value, self.cline_company)
         add_subelement_with_text(tag, Tags.cline_text.value, self.cline_text)
         return tag
@@ -136,19 +147,33 @@ class Release:
 
     def build_release_id(self):
         tag = et.Element(Tags.release_id.value)
-        add_subelement_with_text(tag, self.id_type, self.id)
+        # ReleaseId by default is ISRC
+        # If releaseId is chosen to be Proprietary then check if senders_dpid is 
+        # given to build the Id
+        # If not then raise ProprietaryIdNamespace error
+        if self.release_id_type == ReleaseIdType.proprietary_id.value:
+            if 'NameSpace' in namespaces:
+                add_subelement_with_text(tag, self.release_id_type, self.id, **namespaces)
+            else:
+                raise NoNamespaceError() # If no Namespace argument is provided then raise NoNamespaceError
+        add_subelement_with_text(tag, self.release_id_type, self.id)
         return tag
+
+    def get_reference(self):
+        return f"P{self.artist_name.replace(' ', '')}"
 
     def build_display_artist(self):
         tag = et.Element(Tags.display_artist.value)
-        add_subelement_with_text(tag, Tags.artist_party_reference.value, self.artist_reference)
+        add_subelement_with_text(tag, Tags.artist_party_reference.value, self.get_reference()) # ArtistPartyReference
         add_subelement_with_text(tag, Tags.display_artist_role.value, self.artist_role)
         return tag
 
     def write(self):
         tag = et.Element(Tags.release.value)
         add_subelement_with_text(tag, Tags.release_reference.value, self.reference)
-        add_subelement_with_text(tag, Tags.release_type.value, self.id_type)
+        # release_type should belong to the ReleaseTypeSet
+        # check config file to see what types of release_type values are allowed
+        add_subelement_with_text(tag, Tags.release_type.value, self.release_type)
         tag.append(self.build_release_id())
 
         if self.display_title_text:
@@ -165,7 +190,7 @@ class Release:
             ApplicableTerritoryCode=self.territory
         )
         tag.append(self.build_display_artist())
-        add_subelement_with_text(tag, Tags.release_label_reference.value, self.release_label_reference)
+        add_subelement_with_text(tag, Tags.release_label_reference.value, self.release_label_reference.replace(' ', ''))
         tag.append(self.build_cline())
         tag.append(self.build_genre())
         add_subelement_with_text(tag, Tags.parental_warning.value, self.parental_warning)
@@ -179,23 +204,38 @@ class Release:
 
 
 class RelatedRelease:
+    """
+    Builds RelatedRelease tag
+    It has ReleaseId, ReleaseRelationshipType as child elements
+    """
     def __init__(
             self,
             relationship_type,
             id_,
-            id_type=ReleaseIdType.proprietary_id.value):
+            id_type,
+            **namespaces,
+            ):
         self.relationship_type = relationship_type
         self.id = id_
         self.id_type = id_type
+        self.namespaces = namespaces # Namespace keyword argument for when id_type is proprietary
 
     def build_release_id(self):
         tag = et.Element(Tags.release_id.value)
-        add_subelement_with_text(tag, self.id_type, self.id)
+        if self.id_type == ReleaseIdType.proprietary_id.value:
+            if 'Namespace' in self.namespaces:
+                add_subelement_with_text(tag, self.id_type, self.id, **self.namespaces)
+            else:
+                raise NoNamespaceError()
+        add_subelement_with_text(tag, self.id_type, self.id) # Adds default ICPN id_type to the build
         return tag
 
     def write(self):
         tag = et.Element(Tags.related_release.value)
-        add_subelement_with_text(tag, Tags.release_relationship_type.value, self.relationship_type)
+        if self.relationship_type in ReleaseRelationshipTypeSet:
+            add_subelement_with_text(tag, Tags.release_relationship_type.value, self.relationship_type)
+        else:
+            raise InvalidReleaseRelationshipTypeSet(self.relationship_type)
         tag.append(self.build_release_id())
         return tag
 

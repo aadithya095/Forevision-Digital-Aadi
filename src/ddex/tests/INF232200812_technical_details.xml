@@ -1,0 +1,18 @@
+<TechnicalDetails>
+  <TechnicalResourceDetailsReference>TINF232200812</TechnicalResourceDetailsReference>
+  <DeliveryFile>
+    <Type>Audio</Type>
+    <AudioCodecType>WAV</AudioCodecType>
+    <BitRate>2304.0</BitRate>
+    <NumberOfChannels>2</NumberOfChannels>
+    <SamplingRate>48.0</SamplingRate>
+    <Duration>PT3M52S</Duration>
+    <File>
+      <URI>resources/INF232200812.wav</URI>
+      <HashSum>
+        <Algorithm>MD5</Algorithm>
+        <HashSumValue>7bada59084a5347c40287dbd598562c877289be7</HashSumValue>
+      </HashSum>
+    </File>
+  </DeliveryFile>
+</TechnicalDetails>

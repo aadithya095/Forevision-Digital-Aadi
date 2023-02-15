@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--This is the party form page-->
+<h1>Party Form</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% comment %} This form is received from OrderFormPage class {% endcomment %}
+    {{ form.as_div }} <!--This is the form received from client/views.py-->
+    {% if plan_choice == "Album" %}
+        <input type="submit" value="Next to Album Form">
+    {% endif %}
+    
+    <input type="submit" value="Next to Song Form">
+
+</form>
+{% endblock content %}

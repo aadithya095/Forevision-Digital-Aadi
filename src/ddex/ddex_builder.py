@@ -1,8 +1,11 @@
 from messageheader import MessageHeader, MessageParty, MessageControlType, MessagePartyType
+from technical_details import TechnicalDetailsType
 from party import Party, PartyList, Contributor
 from release_builder import ReleaseBuilder
 from resource_builder import ResourceBuilder
+from deallist import DealList
 from utils import save
+from resource import Tags
 
 from lxml import etree as et
 
@@ -11,35 +14,25 @@ class DdexBuilder:
     def __init__(
             self,
             song_name,
-            song_id_type,
             song_id,
             territory,
+            release_date, # used for start date in deal list
 
             artist_name,
             artist_role,
 
-            pline_year,
             pline_text,
-
-            cline_year,
             cline_text,
 
             genre,
 
             record_label_name,
 
-            codec,
-            bitrate,
-            channels,
-            sampling,
-            duration,
-            uri,
-            hash_algorithm,
-            hash_value,
+            uri,  # filename or path of the file
             parental_warning,
 
             image_id,
-            image_id_type,
+            image_file,
             image_type,
 
             sender_name,
@@ -49,9 +42,16 @@ class DdexBuilder:
 
             display_title=None,
             alternative_titles=[],
-            pline_company=None,
             cline_company=None,
+            pline_company=None,
+            pline_year=None,
+            cline_year=None,
             sub_genre=None,
+            audio_technical_detail_type=TechnicalDetailsType.audio.value,
+            image_technical_detail_type=TechnicalDetailsType.image.value,
+            release_type="Single",
+            song_id_type=Tags.isrc.value, # If no id type is provided
+            # by default it would be ISRC
 
             message_control_type=MessageControlType.live_message.value,
             parties=[],
@@ -60,6 +60,7 @@ class DdexBuilder:
         self.song_name = song_name
         self.song_id_type = song_id_type
         self.song_id = song_id
+        self.release_date = release_date
         self.display_title = display_title
         self.alternative_titles = alternative_titles
         self.territory = territory
@@ -67,32 +68,29 @@ class DdexBuilder:
         self.artist_name = artist_name
         self.artist_role = artist_role
 
+        self.pline_company = pline_company
         self.pline_year = pline_year
         self.pline_text = pline_text
-        self.pline_company = pline_company
 
+        self.cline_company = cline_company
         self.cline_year = cline_year
         self.cline_text = cline_text
-        self.cline_company = cline_company
 
         self.genre = genre
         self.subgenre = sub_genre
+        self.audio_technical_detail_type = audio_technical_detail_type
+
+        self.release_type = release_type # ReleaseType the value by default is Unknown
 
         self.record_label_name = record_label_name
 
-        self.codec = codec
-        self.bitrate = bitrate
-        self.channels = channels
-        self.sampling = sampling
-        self.duration = duration
         self.uri = uri
-        self.hash_algorithm = hash_algorithm
-        self.hash_value = hash_value
         self.parental_warning = parental_warning
 
         self.image_id = image_id
-        self.image_id_type = image_id_type
+        self.image_file = image_file
         self.image_type = image_type
+        self.image_technical_detail_type = image_technical_detail_type
 
         self.sender_name = sender_name
         self.sender_dpid = sender_dpid
@@ -105,9 +103,9 @@ class DdexBuilder:
 
     def build_root(self):
         attrs = {
-            'release_version_id': 'Audio',
-            'language_code': 'en',
-            'avs_version_id': '3',
+            'ReleaseProfileVariantVersionId': 'Classical',
+            'LanguageAndScriptCode': 'en',
+            'AvsVersionId': '3',
         }
         ern = 'http://ddex.net/xml/ern/43'
         xsi = 'http://w3.org/2001/XMLSchema-instance'
@@ -118,8 +116,8 @@ class DdexBuilder:
             'ern': ern,
             'xsi': xsi,
         }
-        tag = et.Element(et.QName(ern, 'NewReleaseMessage'), nsmap=mapping)
-        tag.set(et.QName(xsi, 'schemaLocation'), xsd)
+        # I removed xsi:schemaLocation as it did not hamper the validation test
+        tag = et.Element(et.QName(ern, 'NewReleaseMessage'), nsmap=mapping, **attrs)
         return tag
 
     def build(self):
@@ -139,33 +137,28 @@ class DdexBuilder:
             recipient=receiver,
             message_control=self.message_control_type,
         )
+        
+        # Need to create a list of parties to pass it into party_list
 
         party_list = PartyList(self.parties)
 
         resource_list = ResourceBuilder(
-            td_id=self.song_id,
-            td_type='AudioFile',
-            audio_codec=self.codec,
-            bitrate=self.bitrate,
-            channels=self.channels,
-            sampling=self.sampling,
-            duration=self.duration,
-            uri=self.uri,
-            hash_algorithm=self.hash_algorithm,
-            hash_value=self.hash_value,
-            resource_id=f"R{self.song_id}",
-            pline_company=self.pline_company,
-            pline_year=self.pline_year,
+            audio_technical_detail_type=self.audio_technical_detail_type,
+            image_technical_details_type=self.image_technical_detail_type,
+            audio_filename=self.uri,
+            image_filename=self.image_file,
+            resource_id=self.song_id,
             pline_text=self.pline_text,
             sound_recording_reference=f"A{self.song_id}",
+            artist_name=self.artist_name,
             title_text=self.song_name,
-            artist_reference=f'P{self.artist_name}',
             artist_role=self.artist_role,
             parental_warning=self.parental_warning,
-            image_reference=f"R{self.image_id}",
+            image_reference=f"A{self.image_id}",
             image_type=self.image_type,
-            image_id_type=self.image_id_type,
-            image_id=self.image_id,
+            party_id=self.sender_dpid,
+            id_type=self.song_id_type,
+            pline_year=self.pline_year,
             contributors=self.contributors,
         )
 
@@ -182,52 +175,88 @@ class DdexBuilder:
             cline_company=self.cline_company,
             release_label_reference=f"P{self.record_label_name}",
             genre=self.genre,
-            relationship_type="LinkedRelease",
+            relationship_type="Unknown",
             release_id=self.song_id,
+            release_type=self.release_type,
             sequence_number='1',
-            resource_reference=f'R{self.song_id}',
-            linked_resource_reference=f'R{self.song_id}'
+            resource_reference=f'A{self.song_id}',
+            linked_resource_reference=f'A{self.song_id}' # LinkedResourceReference must have A as a prefix
         )
+
+        deal_list = DealList(
+                reference=f'R{self.song_id}',
+                start_date=self.release_date,
+                )
 
         root = self.build_root()
         root.append(message_header.write())
         root.append(party_list.write())
         root.append(resource_list.build())
         root.append(release_list.build())
+        root.append(deal_list.write())
         return root
 
 
 if __name__ == "__main__":
+    import os
+    from config import ROOT_DIR
+    test_file_name = os.path.join(ROOT_DIR, 'docs/assets/resources/test_file.wav')
+    image_file_name = os.path.join(ROOT_DIR, 'docs/assets/resources/INF232200812IMG.jpg')
+    p1 = Party(
+            name='Tanmay Jyoti Pathak',
+            role="Singer"
+            )
+    p2 = Party(
+            name='Banjit Pathak',
+            role='Lyricist'
+            )
+    p3 = Party(
+            name="Amit Soukadhara",
+            role="Composer"
+            )
+    p4 = Party(
+            name="Chafikhur Rahman",
+            role="Director"
+            )
+
+    c1 = Contributor(
+            id_="PBanjitPathak",
+            role="Lyricist"
+            )
+    c2 = Contributor(
+            id_="PAmitSoukadhara",
+            role="Composer"
+            )
+    c3 = Contributor(
+            id_="PChafikhurRahman",
+            role="Director"
+            )
+
     builder = DdexBuilder(
-        song_name="Chillo Je Tar",
-        song_id_type='ISRC',
-        song_id='INF232100008',
+        song_name="Akash Nila Nila Sopun",
+        song_id='8905778280390',
+        release_date="2022-10-20",
         territory='Worldwide',
-        artist_name='Subrata kr Dutta',
+        artist_name='Tanmay Jyoti Pathak',
         artist_role='MainArtist',
-        pline_year='2022',
-        pline_text='Subrata kr Dutta',
-        cline_year='2022',
-        cline_text='Big Machine Records',
-        genre='mellow',
-        record_label_name='Big Machine Records',
-        codec='WAV',
-        bitrate='16',
-        channels='2',
-        sampling='44.1',
-        duration='3.44',
-        uri='resource/INF232100008.wav',
-        hash_algorithm='md5',
-        hash_value='08e6f989841236dc98f2d0eeb4a00636',
-        parental_warning='NoExplicit',
-        image_id='INF232100008IMG',
-        image_id_type='ISRC',
+        pline_text='Amit Soukadhara',
+        cline_text='HRIDOI',
+        genre='Regional',
+        record_label_name='HRIDOI',
+        uri=test_file_name,
+        parental_warning='NotExplicit',
+        image_id='INF232200812IMG',
         image_type='FrontCoverImage',
+        image_file=image_file_name,
         sender_name='Forevision Digital',
         sender_dpid='PADPIDA2015010310U',
-        receiver_name='Universal Studios',
-        receiver_dpid='PADPIDA201508920U',
+        receiver_name='Jaxsta',
+        receiver_dpid='PADPIDA2016091404E',
+        parties=[p1, p2, p3, p4],
+        contributors=[c1, c2, c3],
     )
 
     root = builder.build()
-    save(root, 'ddex-demo.xml')
+    filename = "testing_image_file.xml"
+    save(root, filename)
+    print(f'Saved {filename}!')

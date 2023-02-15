@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+    Single Album
+{% endblock title %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'singleform.css' %}">
+    <form action="" method="POST" enctype = "multipart/form-data">
+        {% csrf_token %}
+        <div class="container">
+            {% for content in form %}
+                <div class="section {% if content.errors %} errors{% endif %}">
+                    <label for="{{ content.name }}">{{ content.label }}</label>
+                    <div class="field">{{ content }}</div>
+                    {% if content.errors %}<div class="error-section">{{ content.errors }}</div>{% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <button type="submit">Submit Form</button>
+    </form>
+{% endblock content %}

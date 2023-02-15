@@ -6,31 +6,27 @@
       <ResourceId>
         <ISRC>1</ISRC>
       </ResourceId>
-      <Pline>
+      <PLine>
         <Year>2023</Year>
-        <PlineCompany>ForevisionDigital</PlineCompany>
-        <PlineText>Belongs to Forevision Digital</PlineText>
-      </Pline>
+        <PLineText>Belongs to Forevision Digital</PLineText>
+        <PLineCompany>ForevisionDigital</PLineCompany>
+      </PLine>
       <TechnicalDetails>
         <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
         <DeliveryFile>
-          <Type>AudioFile</Type>
-          <AudioCodecType>Mp3</AudioCodecType>
-          <BitRate>16</BitRate>
-          <NumberOfChannels>2</NumberOfChannels>
-          <SamplingRate>44.1</SamplingRate>
-          <Duration>PT0H3M20S</Duration>
-          <File>
-            <URI>resources/tests.mp3</URI>
-            <HashSum>
-              <Algorithm>md5</Algorithm>
-              <HashSumValue>dad345add3324ewa4</HashSumValue>
-            </HashSum>
-          </File>
+          <Type>AudioType</Type>
         </DeliveryFile>
       </TechnicalDetails>
     </SoundRecordingEdition>
-    <DisplayTitleText>Tumi Din Dhale</DisplayTitleText>
+    <DisplayTitleText>Subrata Kr Dutta: Tumi Din Dhale</DisplayTitleText>
+    <DisplayTitle>
+      <TitleText>Tumi Din Dhale</TitleText>
+    </DisplayTitle>
+    <DisplayArtistName>Subrata Kr Dutta</DisplayArtistName>
+    <DisplayArtist>
+      <ArtistPartyReference>PSubrataKrDutta</ArtistPartyReference>
+      <DisplayArtistRole>MainArtist</DisplayArtistRole>
+    </DisplayArtist>
     <Contributor SequenceNumber="0">
       <ContributorPartyReference>1</ContributorPartyReference>
       <Role>Orchestra</Role>
@@ -43,12 +39,20 @@
       <ContributorPartyReference>3</ContributorPartyReference>
       <Role>Guitar</Role>
     </Contributor>
+    <Duration/>
+    <ParentalWarningType>NoExplicit</ParentalWarningType>
   </SoundRecording>
   <Image>
     <ResourceReference>R1</ResourceReference>
     <Type>FrontCoverImage</Type>
     <ResourceId>
-      <ProprietaryId>PAPI1034003</ProprietaryId>
+      <ProprietaryId Namespace="PAPI10393002">T1IMG</ProprietaryId>
     </ResourceId>
+    <TechnicalDetails>
+      <TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+      <DeliveryFile>
+        <Type>ImageType</Type>
+      </DeliveryFile>
+    </TechnicalDetails>
   </Image>
 </ResourceList>

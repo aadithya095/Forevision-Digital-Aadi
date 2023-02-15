@@ -1,4 +1,9 @@
-from release import Release, RelatedRelease, ResourceGroup, ReleaseIdType, ReleaseList
+from release import (Release,
+                     RelatedRelease,
+                     ResourceGroup,
+                     ReleaseIdType,
+                     ReleaseList
+                     )
 
 
 class ReleaseBuilder:
@@ -20,7 +25,8 @@ class ReleaseBuilder:
                  sequence_number,
                  resource_reference,
                  linked_resource_reference,
-                 release_id_type=ReleaseIdType.proprietary_id.value,
+                 release_type,
+                 release_id_type=ReleaseIdType.icpn.value,
                  sub_genre=None,
                  additional_title=None,
                  parental_warning="Unknown",
@@ -42,6 +48,7 @@ class ReleaseBuilder:
         self.sequence_number = sequence_number
         self.resource_reference = resource_reference
         self.linked_resource_reference = linked_resource_reference
+        self.release_type = release_type
         self.release_id_type = release_id_type
         self.sub_genre = sub_genre
         self.additional_title = additional_title
@@ -77,7 +84,7 @@ class ReleaseBuilder:
             sub_genre=self.sub_genre,
             additional_title=self.additional_title,
             parental_warning=self.parental_warning,
-            id_type=self.release_id_type,
+            release_type=self.release_type,
             related_release=[related_release],
             resource_group=[resource_group]
         )
@@ -103,6 +110,7 @@ if __name__ == "__main__":
         genre="pop",
         relationship_type="LinkedRelease",
         release_id="PAPI02903084",
+        release_type="Unknown",
         sequence_number="1",
         resource_reference="R1",
         linked_resource_reference="R1",

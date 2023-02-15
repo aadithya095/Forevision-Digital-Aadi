@@ -1,9 +1,23 @@
 from django.urls import path
-from .views import SingleReleaseFormView, DashboardView
+from . import views
+# from .views import (
+#         DashboardView,
+#         LandingPage,
+#         LoginPage,
+#         RegisterPage,
+#         OrderFormPage,
+#         # PartyFormPage,
+#                     )
 
-app_name = 'client'
 
 urlpatterns = [
-        path('single-form/', SingleReleaseFormView.as_view(), name='single_form'),
-        path('dashboard/', DashboardView.as_view(), name='dashboard'),
-        ]
+    path('', views.singleRelease, name='singleRelease'),
+    # path('', LandingPage.as_view(), name='landing'),
+    # path('login/', views.LoginPage.as_view(), name='user_login'),
+    # path('register/', RegisterPage.as_view(), name='user_register'),
+    # path('dashboard/', DashboardView.as_view(), name='dashboard'),
+
+    # # Urls for form based views
+    # path('order-form/', OrderFormPage.as_view(), name='order_form'),
+    # # path('party-form/', PartyFormPage.as_view(), name='party_form'),
+]

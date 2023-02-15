@@ -1,0 +1,21 @@
+<!--
+    For more information on the structure on frontend directory look
+    at docs/frontend/directory_structure.md
+-->
+{% extends 'base.html' %}
+
+{% block title %}
+    Landing Page
+{% endblock title %}
+
+{% block content %}
+    {% include 'includes/navbar.html' %}
+    <h1>Landing Page</h1>
+
+    <a href="{% url 'client:user_login' %}">Login</a>
+    <a href="{% url 'client:user_register' %}">Register</a>
+
+    {% include 'includes/footer.html' %}
+{% endblock content %}
+
+

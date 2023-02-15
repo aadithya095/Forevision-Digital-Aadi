@@ -10,7 +10,7 @@ class Tags(Enum):
     root = "MessageHeader"
     message_id = "MessageId"
     thread_id = "MessageThreadId"
-    created_date = "MessageCreateDateTime"
+    created_date = "MessageCreatedDateTime"
     control = "MessageControlType"
 
     # Message Party
@@ -42,8 +42,12 @@ class MessageHeader:
         if thread_id:
             self.thread_id = thread_id
         self.thread_id = str(uuid())
-        self.created_date_time = str(datetime.now())
+        self.created_date_time = datetime.now()
         self.message_control = message_control
+
+    def format_datetime(self):
+        # Returns a formatted datetime that is compatible with ddex validator
+        return self.created_date_time.strftime('%Y-%m-%dT%H:%M:%S')
 
     def write(self):
         tag = et.Element(Tags.root.value)  # MessageHeader
@@ -51,7 +55,7 @@ class MessageHeader:
         add_subelement_with_text(tag, Tags.message_id.value, self.message_id)
         tag.append(self.sender.write())
         tag.append(self.recipient.write())
-        add_subelement_with_text(tag, Tags.created_date.value, self.created_date_time)
+        add_subelement_with_text(tag, Tags.created_date.value, self.format_datetime())
         add_subelement_with_text(tag, Tags.control.value, self.message_control)
         return tag
 

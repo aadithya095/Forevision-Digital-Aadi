@@ -1,0 +1,139 @@
+<ern:NewReleaseMessage xmlns:ern="http://ddex.net/xml/ern/43" xmlns:xsi="http://w3.org/2001/XMLSchema-instance" ReleaseProfileVariantVersionId="Classical" LanguageAndScriptCode="en" AvsVersionId="3">
+  <MessageHeader>
+    <MessageThreadId>07e3b0ea-15a1-4da3-821e-c31e5dec431a</MessageThreadId>
+    <MessageId>6b95f0d6-5e3c-4716-a0ad-e233c2edf39d</MessageId>
+    <MessageSender>
+      <PartyId>PADPIDA2015010310U</PartyId>
+      <PartyName>
+        <FullName>Forevision Digital</FullName>
+      </PartyName>
+    </MessageSender>
+    <MessageRecipient>
+      <PartyId>PADPIDA201508920U</PartyId>
+      <PartyName>
+        <FullName>Universal Studios</FullName>
+      </PartyName>
+    </MessageRecipient>
+    <MessageCreatedDateTime>2023-01-24T03:01:04</MessageCreatedDateTime>
+    <MessageControlType>LiveMessage</MessageControlType>
+  </MessageHeader>
+  <PartyList>
+    <Party>
+      <PartyReference>PTanmayJyotiPathak</PartyReference>
+      <PartyName>
+        <FullName>Tanmay Jyoti Pathak</FullName>
+      </PartyName>
+    </Party>
+    <Party>
+      <PartyReference>PBanjitPathak</PartyReference>
+      <PartyName>
+        <FullName>Banjit Pathak</FullName>
+      </PartyName>
+    </Party>
+    <Party>
+      <PartyReference>PAmitSoukadhara</PartyReference>
+      <PartyName>
+        <FullName>Amit Soukadhara</FullName>
+      </PartyName>
+    </Party>
+  </PartyList>
+  <ResourceList>
+    <SoundRecording>
+      <ResourceReference>AINF232200812</ResourceReference>
+      <Type>MusicalWorkSoundRecording</Type>
+      <SoundRecordingEdition>
+        <ResourceId>
+          <ISRC>INF232200812</ISRC>
+        </ResourceId>
+        <PLine>
+          <PLineText>Amit Soukadhara</PLineText>
+        </PLine>
+        <TechnicalDetails>
+          <TechnicalResourceDetailsReference>TINF232200812</TechnicalResourceDetailsReference>
+          <DeliveryFile>
+            <Type>AudioFile</Type>
+            <AudioCodecType>UserDefined</AudioCodecType>
+            <BitRate>2304.0</BitRate>
+            <NumberOfChannels>2</NumberOfChannels>
+            <SamplingRate>48.0</SamplingRate>
+            <Duration>PT3M52S</Duration>
+            <File>
+              <URI>resources/test_file.wav</URI>
+              <HashSum>
+                <Algorithm>MD5</Algorithm>
+                <HashSumValue>7bada59084a5347c40287dbd598562c877289be7</HashSumValue>
+              </HashSum>
+            </File>
+          </DeliveryFile>
+        </TechnicalDetails>
+      </SoundRecordingEdition>
+      <DisplayTitleText>Tanmay Jyoti Pathak: Akash Nila Nila Sopun</DisplayTitleText>
+      <DisplayTitle>
+        <TitleText>Akash Nila Nila Sopun</TitleText>
+      </DisplayTitle>
+      <DisplayArtistName>Tanmay Jyoti Pathak</DisplayArtistName>
+      <DisplayArtist>
+        <ArtistPartyReference>PTanmayJyotiPathak</ArtistPartyReference>
+        <DisplayArtistRole>MainArtist</DisplayArtistRole>
+      </DisplayArtist>
+      <Contributor SequenceNumber="0">
+        <ContributorPartyReference>PBanjitPathak</ContributorPartyReference>
+        <Role>Lyricist</Role>
+      </Contributor>
+      <Contributor SequenceNumber="1">
+        <ContributorPartyReference>PAmitSoukadhara</ContributorPartyReference>
+        <Role>Composer</Role>
+      </Contributor>
+      <Duration>PT3M52S</Duration>
+      <ParentalWarningType>NotExplicit</ParentalWarningType>
+    </SoundRecording>
+    <Image>
+      <ResourceReference>AINF232200812IMG</ResourceReference>
+      <Type>FrontCoverImage</Type>
+      <ResourceId>
+        <ProprietaryId Namespace="PADPIDA2015010310U">INF232200812IMG</ProprietaryId>
+      </ResourceId>
+    </Image>
+  </ResourceList>
+  <ReleaseList>
+    <Release>
+      <ReleaseReference>RINF232200812</ReleaseReference>
+      <ReleaseType>Single</ReleaseType>
+      <ReleaseId>
+        <ICPN>INF232200812</ICPN>
+      </ReleaseId>
+      <DisplayTitleText>Akash Nila Nila Sopun</DisplayTitleText>
+      <DisplayTitle>
+        <TitleText>Akash Nila Nila Sopun</TitleText>
+      </DisplayTitle>
+      <DisplayArtistName ApplicableTerritoryCode="Worldwide">Tanmay Jyoti Pathak</DisplayArtistName>
+      <DisplayArtist>
+        <ArtistPartyReference>PTanmayJyotiPathak</ArtistPartyReference>
+        <DisplayArtistRole>MainArtist</DisplayArtistRole>
+      </DisplayArtist>
+      <ReleaseLabelReference>PHRIDOI</ReleaseLabelReference>
+      <CLine>
+        <CLineCompany/>
+        <CLineText>HRIDOI</CLineText>
+      </CLine>
+      <Genre>
+        <GenreText>Regional</GenreText>
+      </Genre>
+      <ParentalWarningType>Unknown</ParentalWarningType>
+      <RelatedRelease>
+        <ReleaseRelationshipType>Unknown</ReleaseRelationshipType>
+        <ReleaseId>
+          <ICPN>INF232200812</ICPN>
+        </ReleaseId>
+      </RelatedRelease>
+      <ResourceGroup>
+        <SequenceNumber>1</SequenceNumber>
+        <ResourceGroupContentItem>
+          <SequenceNumber>1</SequenceNumber>
+          <ReleaseResourceReference>AINF232200812</ReleaseResourceReference>
+          <LinkedReleaseResourceReference>AINF232200812</LinkedReleaseResourceReference>
+        </ResourceGroupContentItem>
+      </ResourceGroup>
+    </Release>
+  </ReleaseList>
+</ern:NewReleaseMessage>

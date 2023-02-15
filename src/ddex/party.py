@@ -34,18 +34,30 @@ class Tags(Enum):
 
 
 class Party:
-    def __init__(self, id_, name):
-        self.id = id_
+    """
+    I removed id as it is redundant and the reference can be made by attaching P as a prefix with the name. The id will be optional.
+    """
+    def __init__(self, name, id_=None, role=None):
         self.name = name
+        self.id = id_
+        self.role = role
 
     def build_name(self):
         tag = et.Element(Tags.name.value)
         add_subelement_with_text(tag, Tags.fullname.value, self.name)
         return tag
 
+    def get_reference(self):
+        # Gives name reference of the party
+        parse_name = self.name.replace(" ", "")
+        return f"P{parse_name}"
+
     def write(self):
         tag = et.Element(Tags.party.value)
-        add_subelement_with_text(tag, Tags.reference.value, f'P{self.id}')
+        if self.id:
+            add_subelement_with_text(tag, Tags.reference.value, f'P{self.id}')
+        else:
+            add_subelement_with_text(tag, Tags.reference.value, self.get_reference()) # Removes the spaces in the name that is not accepted as per the ddex standard
         tag.append(self.build_name())
         return tag
 

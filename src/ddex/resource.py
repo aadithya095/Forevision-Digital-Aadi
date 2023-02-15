@@ -16,7 +16,8 @@ All required tags or parts of ResourceList such as SoundRecording, SoundRecordin
 
 from enum import Enum
 from lxml import etree as et
-from utils import add_subelement_with_text
+from utils import add_subelement_with_text, format_duration
+
 
 
 class Tags(Enum):
@@ -28,7 +29,7 @@ class Tags(Enum):
     resource_id = "ResourceId"
     pline = "PLine"
     pline_year = "Year"
-    pline_company = "PlineCompany"
+    pline_company = "PLineCompany"
     pline_text = "PLineText"
     technical_details = "TechnicalDetails"
     tech_resource_ref = "TechnicalResourceDetailsReference"
@@ -47,14 +48,15 @@ class Tags(Enum):
     display_title_text = "DisplayTitleText"
     display_title = "DisplayTitle"
     title_text = "TitleText"
+    display_artist_name = "DisplayArtistName"
     display_artist = "DisplayArtist"
     artist_party_reference = "ArtistPartyReference"
-    display_artist_role = "DislplayArtistRole"
+    display_artist_role = "DisplayArtistRole"
     artist_role = "ArtistRole"
     contributor = "Contributor"
     contributor_party_reference = "ContributorPartyReference"
     role = "Role"
-    parental_warning = "ParentalWarning"
+    parental_warning = "ParentalWarningType"
     isrc = "ISRC"
     image = "Image"
     proprietary_id = "ProprietaryId"
@@ -93,7 +95,7 @@ class SoundRecording:
                  reference,
                  sound_recording_edition,
                  title_text,
-                 artist_reference,
+                 artist_name,
                  artist_role,
                  duration,
                  parental_warning,
@@ -102,17 +104,34 @@ class SoundRecording:
         self.reference = reference
         self.sound_recording_edition = sound_recording_edition
         self.title_text = title_text
-        self.artist_reference = artist_reference
+        self.artist_name = artist_name
         self.artist_role = artist_role
         self.duration = duration
         self.parental_warning = parental_warning
         self.contributors = contributors
         self.type = type_
 
+    def get_reference(self):
+        return f"P{self.artist_name.replace(' ', '')}" # Returns a string of artist name with prefix P and no spaces
+
     def build_display_artist(self):
+        """Builds DisplayArtist tag"""
         tag = et.Element(Tags.display_artist.value)
-        add_subelement_with_text(tag, Tags.artist_party_reference.value, self.artist_reference)
-        add_subelement_with_text(tag, Tags.display_artist_role.value, self.artist_role)
+        add_subelement_with_text(tag, Tags.artist_party_reference.value, self.get_reference()) # ArtistPartyReference
+        add_subelement_with_text(tag, Tags.display_artist_role.value, self.artist_role) # DisplayArtistRole
+        return tag
+
+    def build_display_title(self):
+        """
+        Builds DisplayTitle tag.
+
+        Xml:
+        <DisplayTitle>
+            <TitleText>Title</TitleText>
+        </DisplayTitle>
+        """
+        tag = et.Element(Tags.display_title.value)
+        add_subelement_with_text(tag, Tags.title_text.value, self.title_text)
         return tag
 
     def write(self):
@@ -120,35 +139,63 @@ class SoundRecording:
         add_subelement_with_text(tag, Tags.reference.value, self.reference)
         add_subelement_with_text(tag, Tags.type.value, self.type)
         tag.append(self.sound_recording_edition.write())
-        add_subelement_with_text(tag, Tags.display_title_text.value, self.title_text)
+
+        #  This only builds the display title text tag by using 
+        #  artist_name and title_text provided to the object
+        #  TODO: Optional display_title_text needs to be an attribute
+        #  To provide an option to use other titles of display
+        #  Except the ones provided
+        add_subelement_with_text(tag, Tags.display_title_text.value, f"{self.artist_name}: {self.title_text}")
+        tag.append(self.build_display_title())
+        add_subelement_with_text(tag, Tags.display_artist_name.value, self.artist_name)
+        tag.append(self.build_display_artist())
+
+        #  This builds Contributor section
+        #  Though I find it unclear on a proper implementation of
+        #  the contributor section
         for i, contributor in enumerate(self.contributors):
             tag.append(contributor.write(SequenceNumber=str(i)))
+        add_subelement_with_text(tag, Tags.duration.value, self.duration)
+        add_subelement_with_text(tag, Tags.parental_warning.value, self.parental_warning)
         return tag
 
 
 class SoundRecordingEdition:
     def __init__(self,
                  resource_id,
-                 pline_year,
-                 pline_company,
                  pline_text,
-                 technical_details):
+                 technical_details,
+                 id_type,
+                 pline_company=None,
+                 pline_year=None,
+                 ):
         self.resource_id = resource_id
-        self.pline_year = pline_year
-        self.pline_company = pline_company
-        self.pline_text = pline_text
         self.technical_details = technical_details
+        self.pline_text = pline_text
+        self.pline_company = pline_company
+        self.pline_year = pline_year
+        self.id_type = id_type
 
     def build_resource_id(self):
         tag = et.Element(Tags.resource_id.value)
-        add_subelement_with_text(tag, Tags.isrc.value, self.resource_id)
+        add_subelement_with_text(tag, self.id_type, self.resource_id)
         return tag
 
     def build_pline(self):
-        tag = et.Element(Tags.pline.value)
-        add_subelement_with_text(tag, Tags.pline_year.value, self.pline_year)
-        add_subelement_with_text(tag, Tags.pline_company.value, self.pline_company)
-        add_subelement_with_text(tag, Tags.pline_text.value, self.pline_text)
+        """
+        It returns the PLine tag.
+        PLineCompany is not None and can have the name of the party if provided.
+        PlineText is optional and is to be used when there is an actual text for pline. Eg: @2020 Sony Music Entertainment
+        PLineYear is not necessary for new releases if the input is not provided.
+        """
+        tag = et.Element(Tags.pline.value)  # PLine
+        if self.pline_year:
+            add_subelement_with_text(tag, Tags.pline_year.value, self.pline_year)  # PLineYear
+
+        add_subelement_with_text(tag, Tags.pline_text.value, self.pline_text)  # PLineText
+
+        if self.pline_company:
+            add_subelement_with_text(tag, Tags.pline_company.value, self.pline_company)  # PLineCompany
         return tag
 
     def write(self):
@@ -159,83 +206,43 @@ class SoundRecordingEdition:
         return tag
 
 
-class TechnicalDetails:
-    def __init__(self,
-                 id_,
-                 type_,
-                 codec,
-                 bitrate,
-                 channels,
-                 sampling,
-                 duration,
-                 uri,
-                 hash_algorithm,
-                 hash_value,
-                 ):
-        self.id = id_
-        self.type = type_
-        self.codec = codec
-        self.bitrate = bitrate
-        self.channels = channels
-        self.sampling = sampling
-        self.duration = duration
-        self.uri = uri
-        self.hash_algorithm = hash_algorithm
-        self.hash_value = hash_value
-
-    def get_reference(self):
-        return f'T{self.id}'
-
-    def build_file(self):
-        tag = et.Element(Tags.file.value)
-        add_subelement_with_text(tag, Tags.uri.value, self.uri)
-        tag.append(self.build_hashsum())
-        return tag
-
-    def build_hashsum(self):
-        tag = et.Element(Tags.hashsum.value)
-        add_subelement_with_text(tag, Tags.algo.value, self.hash_algorithm)
-        add_subelement_with_text(tag, Tags.hashsum_value.value, self.hash_value)
-        return tag
-
-    def build_delivery_file(self):
-        tag = et.Element(Tags.delivery_file.value)
-        add_subelement_with_text(tag, Tags.type.value, self.type)  # Type
-        add_subelement_with_text(tag, Tags.codec_type.value, self.codec)  # AudioCodecType
-        add_subelement_with_text(tag, Tags.bitrate.value, self.bitrate)  # BitRate
-        add_subelement_with_text(tag, Tags.channels.value, self.channels)  # NumberOfChannels
-        add_subelement_with_text(tag, Tags.sampling_rate.value, self.sampling)  # SamplingRate
-        add_subelement_with_text(tag, Tags.duration.value, self.duration)  # Duration
-        tag.append(self.build_file())
-        return tag
-
-    def write(self):
-        tag = et.Element(Tags.technical_details.value)
-        add_subelement_with_text(tag, Tags.tech_resource_ref.value, self.get_reference())
-        tag.append(self.build_delivery_file())
-        return tag
-
-
 class Image:
-    def __init__(self, reference, type_, id_, id_type=ImageIdType.proprietary_id.value):
-        self.reference = reference
-        self.type = type_
-        self.id = id_
-        self.id_type = id_type
+    """
+    Image class is used to create the Image tag. It gets included inside 
+    ResourceList.
+    """
+    def __init__(self, reference, type_, id_, party_id, technical_details):
+        self.reference = reference  # a unique reference for the image resource 
+        # over the whole document
+        self.type = type_  # the type of the image resource
+        # the id of the image is resource_id 
+        # need to add [resource_id]IMG at the end
+        self.id = f"T{id_}IMG"
+        # is currently used.
+        self.party_id = party_id # party_id is used as a value for namespace in 
+        # ProprietaryId
+        self.technical_details = technical_details
 
     def build_resource_id(self):
+        """
+        This function builds resource id with proprietary id.
+        """
         tag = et.Element(Tags.resource_id.value)
-        if self.id_type == ImageIdType.proprietary_id.value:
-            add_subelement_with_text(tag, Tags.proprietary_id.value, self.id)
-            return tag
-        else:
-            add_subelement_with_text(tag, self.id_type, self.id)
-            return tag
+        add_subelement_with_text(
+                tag, 
+                Tags.proprietary_id.value, 
+                self.id, 
+                Namespace=self.party_id
+                )
+        return tag
 
     def write(self):
+        """
+        It returns lxml tag for Image
+        """
         tag = et.Element(Tags.image.value)
         add_subelement_with_text(tag, Tags.reference.value, self.reference)
-        print(f"{self.type=}")
         add_subelement_with_text(tag, Tags.type_.value, self.type)
         tag.append(self.build_resource_id())
+        tag.append(self.technical_details.write())
         return tag
